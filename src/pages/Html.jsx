@@ -44,7 +44,12 @@ function Html() {
         <meta property="og:title" content={seoData.title} />
 
         <meta property="og:description" content={seoData.desc} />
+        <meta
+          name="keywords"
+          content="HTML, Learn HTML, HTML Tutorial, Web Development, Learn Web Development"
+        />
 
+        <meta name="robots" content="index, follow" />
         <meta
           property="og:image"
           content="https://learnwebdev.me/favicon.png"

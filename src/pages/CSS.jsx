@@ -1,6 +1,6 @@
 function Css(){
     return(
-        <div className="bg-[#0f1117] min-h-screen text-white flex">
+        <div className="bg-[#0f1117]  text-white flex">
         </div>
     )
 }
