@@ -55,7 +55,6 @@ function Html() {
         <link rel="canonical" href="https://yourdomain.com/html" />
       </Helmet>
 
-      <div className="bg-[#0f1117] min-h-screen text-white flex"></div>
       <div className="bg-[#0f1117] min-h-screen text-white flex">
         {/* button sidebar for phone */}
         <button
