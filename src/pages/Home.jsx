@@ -52,7 +52,7 @@ export default function Home() {
               name: "css",
               desc: "التصميم والشكل",
               color: "text-blue-400 bg-blue-500/10",
-              lessons: "15 درس",
+              lessons: "19 درس",
             },
             {
               letter: "JS",
