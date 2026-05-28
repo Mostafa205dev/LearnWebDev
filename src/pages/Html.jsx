@@ -47,12 +47,12 @@ function Html() {
 
         <meta
           property="og:image"
-          content="https://yourdomain.com/favicon.png"
+          content="https://learnwebdev.me/favicon.png"
         />
 
         <meta property="og:type" content="website" />
 
-        <link rel="canonical" href="https://yourdomain.com/html" />
+        <link rel="canonical" href="https://learnwebdev.me/html" />
       </Helmet>
 
       <div className="bg-[#0f1117] min-h-screen text-white flex">

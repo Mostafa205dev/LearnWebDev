@@ -15,13 +15,13 @@ export default function App() {
       {/* <main style={{ flex: 1 }}> */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Privacy" element={<Privacy />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
 
-        <Route path="/HTML" element={<Html />} />
-        <Route path="/Css" element={<Css />} />
-        <Route path="/JavaScript" element={<JavaScript />} />
+        <Route path="/html" element={<Html />} />
+        <Route path="/css" element={<Css />} />
+        <Route path="/javascript" element={<JavaScript />} />
       </Routes>
       {/* </main> */}
     </BrowserRouter>

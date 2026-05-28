@@ -20,10 +20,10 @@ function Header() {
         <Link to={"/privacy"} className="text-sm text-slate-400 hover:text-white cursor-pointer">
           privacy
         </Link>
-        <Link to={"/Contact"} className="text-sm text-slate-400 hover:text-white cursor-pointer">
+        <Link to={"/contact"} className="text-sm text-slate-400 hover:text-white cursor-pointer">
           Contact Us
         </Link>
-        <Link to={"/About"} className="text-sm text-slate-400 hover:text-white cursor-pointer">
+        <Link to={"/about"} className="text-sm text-slate-400 hover:text-white cursor-pointer">
           About
         </Link>
       </div>
