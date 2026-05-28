@@ -8,7 +8,6 @@ function Html() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log(entry.target.id, entry.isIntersecting);
           if (entry.isIntersecting) {
             setActiveLesson(entry.target.id);
           }

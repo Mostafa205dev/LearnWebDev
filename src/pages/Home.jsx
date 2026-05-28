@@ -45,7 +45,7 @@ export default function Home() {
               name: "HTML",
               desc: "أساس كل موقع ويب",
               color: "text-orange-400 bg-orange-500/10",
-              lessons: "12 درس",
+              lessons: "13 درس",
             },
             {
               letter: "C",
