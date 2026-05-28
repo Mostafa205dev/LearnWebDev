@@ -1,54 +1,100 @@
+import { useEffect, useState } from "react";
+
 function Html() {
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [activeLesson, setActiveLesson] = useState("intro");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          console.log(entry.target.id, entry.isIntersecting);
+          if (entry.isIntersecting) {
+            setActiveLesson(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0,
+        rootMargin: "0px 0px -50% 0px",
+      },
+    );
+
+    document.querySelectorAll("div[id]").forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  function Top() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <div className="bg-[#0f1117] min-h-screen text-white flex">
+      {/* button sidebar for phone */}
+      <button
+        className="fixed top-25 left-0 bg-red-400 p-2 rounded-xl sm:hidden"
+        onClick={() => setShowSidebar(!showSidebar)}
+      >
+        nav
+      </button>
+
+      {/* button to top*/}
+      <button
+        className="fixed bottom-5 right-5 bg-red-400 p-2 rounded-xl "
+        onClick={() => Top()}
+      >
+        top
+      </button>
       {/* sidebar */}
-      <div className="border-r border-white/10 p-7 w-[230px] flex flex-col gap-[30px] shrink-0 sticky top-0 h-screen">
+      <div
+        className={`
+          border-r border-white/10 p-7 w-[230px]
+          flex flex-col gap-[30px]
+          h-screen bg-[#0f1117] z-40
+          transition-transform duration-300
+
+          fixed top-0 left-0
+          ${showSidebar ? "translate-x-0" : "-translate-x-full"}
+
+          sm:relative sm:sticky sm:top-0 sm:translate-x-0
+        `}
+      >
         <h1 className="text-orange-400 text-xl">Html Track</h1>
         <div className="flex flex-col gap-2">
-          <a href="#intro" className="text-orange-300 text-sm font-medium">
-            • Introduction To Html
-          </a>
-          <a href="#page-structure" className="text-slate-500 text-sm">
-            • Page Structure
-          </a>
-          <a href="#headings-and-texts" className="text-slate-500 text-sm">
-            • Headings And Texts
-          </a>
-          <a href="#links-and-images" className="text-slate-500 text-sm">
-            • Links And Images
-          </a>
-          <a href="#lists" className="text-slate-500 text-sm">
-            • Lists
-          </a>
-          <a href="#tables" className="text-slate-500 text-sm">
-            • Tables
-          </a>
-          <a href="#forms" className="text-slate-500 text-sm">
-            • Forms
-          </a>
-          <a href="#semantic-elements" className="text-slate-500 text-sm">
-            • Semantic Elements
-          </a>
-          <a href="#attributes" className="text-slate-500 text-sm">
-            • HTML Attributes
-          </a>
-          <a href="#media-elements" className="text-slate-500 text-sm">
-            • Media Elements
-          </a>
-          <a href="#meta-seo" className="text-slate-500 text-sm">
-            • Meta Tags & SEO
-          </a>
-          <a href="#html-entities" className="text-slate-500 text-sm">
-            • HTML Entities
-          </a>
-          <a href="#block-vs-inline" className="text-slate-500 text-sm">
-            • Block vs Inline
-          </a>
+          {[
+            { id: "intro", label: "Introduction To Html" },
+            { id: "page-structure", label: "Page Structure" },
+            { id: "headings-and-texts", label: "Headings And Texts" },
+            { id: "links-and-images", label: "Links And Images" },
+            { id: "lists", label: "Lists" },
+            { id: "tables", label: "Tables" },
+            { id: "forms", label: "Forms" },
+            { id: "semantic-elements", label: "Semantic Elements" },
+            { id: "attributes", label: "HTML Attributes" },
+            { id: "media-elements", label: "Media Elements" },
+            { id: "meta-seo", label: "Meta Tags & SEO" },
+            { id: "html-entities", label: "HTML Entities" },
+            { id: "block-vs-inline", label: "Block vs Inline" },
+          ].map((lesson) => (
+            <a
+              key={lesson.id}
+              href={`#${lesson.id}`}
+              onClick={() => setShowSidebar(false)}
+              className={`text-sm ${
+                activeLesson === lesson.id
+                  ? "text-orange-300 font-medium"
+                  : "text-slate-500"
+              }`}
+            >
+              • {lesson.label}
+            </a>
+          ))}
         </div>
       </div>
 
       {/* HtmlBody */}
-      <div className="flex-1 py-10 px-20 overflow-y-auto flex flex-col justify-center items-center gap-10">
+      <div className="flex-1 py-10 px-20 overflow-y-auto flex flex-col justify-center items-center gap-10 max-sm:p-5">
         {/* lesson 1 */}
         <div
           id="intro"
