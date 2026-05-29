@@ -128,7 +128,7 @@ function Html() {
           {/* lesson 1 */}
           <div
             id="intro"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 1
@@ -315,7 +315,7 @@ function Html() {
           {/* lesson 2 */}
           <div
             id="page-structure"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:px-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 2

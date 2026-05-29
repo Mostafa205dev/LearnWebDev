@@ -22,11 +22,11 @@ export default function Home() {
         </p>
         <div className="flex gap-3 justify-center">
           <button className="bg-indigo-500 text-white rounded-xl px-6 py-3 text-sm font-medium hover:opacity-85">
-            ابدأ رحلتك الآن
+            Front End
           </button>
-          <button className="text-slate-400 border border-white/10 rounded-xl px-6 py-3 text-sm hover:text-white">
-            استعرض الدروس
-          </button>
+          {/* <button className="text-slate-400 border border-white/10 rounded-xl px-6 py-3 text-sm hover:text-white">
+            BackEnd
+          </button> */}
         </div>
       </div>
 

@@ -6,6 +6,7 @@ import Header from "./components/Header.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Privacy from "./pages/Privacy.jsx";
+import ComingSoonPage from "./pages/ComingSoon.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -21,7 +22,8 @@ export default function App() {
 
         <Route path="/html" element={<Html />} />
         <Route path="/css" element={<Css />} />
-        <Route path="/javascript" element={<JavaScript />} />
+        <Route path="/javascript" element={<ComingSoonPage />} />
+        <Route path="/react" element={<ComingSoonPage />} />
       </Routes>
       {/* </main> */}
     </BrowserRouter>
