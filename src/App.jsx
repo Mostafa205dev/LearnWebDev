@@ -22,7 +22,7 @@ export default function App() {
 
         <Route path="/html" element={<Html />} />
         <Route path="/css" element={<Css />} />
-        <Route path="/javascript" element={<ComingSoonPage />} />
+        <Route path="/javascript" element={<JavaScript />} />
         <Route path="/react" element={<ComingSoonPage />} />
       </Routes>
       {/* </main> */}
