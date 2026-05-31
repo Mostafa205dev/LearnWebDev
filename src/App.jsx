@@ -24,6 +24,7 @@ export default function App() {
         <Route path="/css" element={<Css />} />
         <Route path="/javascript" element={<JavaScript />} />
         <Route path="/react" element={<ComingSoonPage />} />
+        <Route path="/tailwind" element={<ComingSoonPage />} />
       </Routes>
       {/* </main> */}
     </BrowserRouter>
