@@ -42,7 +42,7 @@ export default function Home() {
         {/* Hero */}
         <div className="text-center px-8 pt-16 pb-12">
           <span className="inline-block bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs rounded-full px-4 py-1 mb-6">
-            تعلم بالعربي
+            learn Web | تعلم الموقع
           </span>
           <h1 className="text-4xl font-bold text-slate-100 leading-tight mb-4">
             تعلم تطوير الويب
