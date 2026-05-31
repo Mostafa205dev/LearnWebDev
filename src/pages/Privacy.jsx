@@ -7,7 +7,7 @@ export default function Privacy() {
           Privacy Policy | سياسة الخصوصية
         </h1>
         <p className="text-slate-500 mt-3">
-          كيف نحمي بياناتك داخل منصة NekhrogFeen
+          كيف نحمي بياناتك
         </p>
       </div>
 
