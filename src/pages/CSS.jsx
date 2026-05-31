@@ -121,7 +121,7 @@ function Css() {
           {/* INTRO */}
           <div
             id="intro"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:p-5"
           >
             <span className="text-xs text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">
               Lesson 1
@@ -175,7 +175,7 @@ function Css() {
           {/* SYNTAX */}
           <div
             id="syntax"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">
               Lesson 2
@@ -269,7 +269,7 @@ function Css() {
           {/* SELECTORS */}
           <div
             id="selectors"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">
               Lesson 3
@@ -399,7 +399,7 @@ function Css() {
           {/* SPECIFICITY */}
           <div
             id="specificity"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full">
               Lesson 4
@@ -486,7 +486,7 @@ function Css() {
           {/* BOX MODEL */}
           <div
             id="box-model"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-green-400 bg-green-500/10 px-3 py-1 rounded-full">
               Lesson 5
@@ -585,7 +585,7 @@ function Css() {
           {/* DISPLAY */}
           <div
             id="display"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full">
               Lesson 6
@@ -683,7 +683,7 @@ function Css() {
           {/* POSITIONING */}
           <div
             id="positioning"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full">
               Lesson 7
@@ -789,7 +789,7 @@ function Css() {
           {/* FLEXBOX */}
           <div
             id="flexbox"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full">
               Lesson 8
@@ -897,7 +897,7 @@ function Css() {
           {/* GRID */}
           <div
             id="grid"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-pink-400 bg-pink-500/10 px-3 py-1 rounded-full">
               Lesson 9
@@ -1019,7 +1019,7 @@ function Css() {
           {/* COLORS */}
           <div
             id="colors"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full">
               Lesson 10
@@ -1124,7 +1124,7 @@ function Css() {
           {/* UNITS */}
           <div
             id="units"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 max-sm:p-5 border border-white/10 rounded-xl max-w-3xl"
           >
             <span className="text-xs text-green-400 bg-green-500/10 px-3 py-1 rounded-full">
               Lesson 11
@@ -1234,7 +1234,7 @@ function Css() {
           {/* TYPOGRAPHY */}
           <div
             id="typography"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:p-5"
           >
             <span className="text-xs text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full">
               Lesson 12
@@ -1355,7 +1355,7 @@ function Css() {
           {/* RESPONSIVE DESIGN */}
           <div
             id="responsive"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:p-5"
           >
             <span className="text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full">
               Lesson 13
@@ -1467,7 +1467,7 @@ function Css() {
           {/* MEDIA QUERIES */}
           <div
             id="media-queries"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:p-5"
           >
             <span className="text-xs text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full">
               Lesson 14
@@ -1584,7 +1584,7 @@ function Css() {
           {/* PSEUDO CLASSES & ELEMENTS */}
           <div
             id="pseudo"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:p-5"
           >
             <span className="text-xs text-fuchsia-400 bg-fuchsia-500/10 px-3 py-1 rounded-full">
               Lesson 15
@@ -1730,7 +1730,7 @@ function Css() {
           {/* TRANSITIONS */}
           <div
             id="transitions"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:p-5"
           >
             <span className="text-xs text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full">
               Lesson 16
@@ -1852,7 +1852,7 @@ function Css() {
           {/* ANIMATIONS */}
           <div
             id="animations"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:p-5"
           >
             <span className="text-xs text-red-400 bg-red-500/10 px-3 py-1 rounded-full">
               Lesson 17
@@ -1985,7 +1985,7 @@ function Css() {
           {/* Z-INDEX */}
           <div
             id="z-index"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:p-5"
           >
             <span className="text-xs text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full">
               Lesson 18
@@ -2063,7 +2063,7 @@ function Css() {
           {/* CSS VARIABLES */}
           <div
             id="css-variables"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:p-5"
           >
             <span className="text-xs text-violet-400 bg-violet-500/10 px-3 py-1 rounded-full">
               Lesson 19
