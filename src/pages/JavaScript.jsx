@@ -141,7 +141,7 @@ function JavaScriptPage() {
           {/* lesson 1 */}
           <div
             id="intro"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 1
@@ -306,7 +306,7 @@ function JavaScriptPage() {
           {/* lesson 2 */}
           <div
             id="variables"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 2
@@ -510,7 +510,7 @@ function JavaScriptPage() {
           {/* lesson 3 */}
           <div
             id="data-types"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 3
@@ -748,7 +748,7 @@ Function`}
           {/* lesson 4 */}
           <div
             id="operators"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 4
@@ -1014,7 +1014,7 @@ Function`}
           {/* lesson 5 */}
           <div
             id="conditions"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 5
@@ -1254,7 +1254,7 @@ console.log("Not allowed");
           {/* lesson 6 */}
           <div
             id="loops"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 6
@@ -1464,7 +1464,7 @@ for (let user of users) {
           {/* lesson 7 */}
           <div
             id="functions"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 7
@@ -1654,7 +1654,7 @@ console.log(greetUser("Ali"));`,
           {/* lesson 8 */}
           <div
             id="arrays"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 8
@@ -1856,7 +1856,7 @@ for (const user of users) {
           {/* lesson 9 */}
           <div
             id="objects"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 9
@@ -2038,7 +2038,7 @@ user.age = 23;`,
           {/* lesson 10 */}
           <div
             id="dom"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 10
@@ -2197,7 +2197,7 @@ btn.addEventListener("click", () => {
           {/* lesson 11 */}
           <div
             id="events"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 11
@@ -2392,7 +2392,7 @@ input.addEventListener("input", (e) => {
           {/* lesson 12 */}
           <div
             id="timers"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 12
@@ -2534,7 +2534,7 @@ setTimeout(() => {
           {/* lesson 13 */}
           <div
             id="es6"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl max-sm:px-5"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 13
