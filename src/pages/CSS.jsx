@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { ArrowUp } from "lucide-react"
+import { ArrowUp } from "lucide-react";
 
 function Css() {
   const [showSidebar, setShowSidebar] = useState(false);
