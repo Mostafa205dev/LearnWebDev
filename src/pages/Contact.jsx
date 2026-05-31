@@ -6,7 +6,7 @@ export default function Contact() {
         <h1 className="text-3xl font-bold text-orange-400">
           Contact Us | اتصل بنا
         </h1>
-        <p className="text-slate-500 mt-3">NekhrogFeen — نخرج فين</p>
+        <p className="text-slate-500 mt-3">تعلم تطوير الويب | Learn Web Development</p>
       </div>
 
       {/* Cards */}

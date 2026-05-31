@@ -38,6 +38,7 @@ export default function Home() {
 
         <link rel="canonical" href="https://learnwebdev.me/" />
       </Helmet>
+      
       <div className="bg-[#0f1117] min-h-screen text-slate-200 font-sans">
         {/* Hero */}
         <div className="text-center px-8 pt-16 pb-12">
