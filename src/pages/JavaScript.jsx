@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import { ArrowUp } from "lucide-react";
 
 function JavaScriptPage() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -76,7 +77,7 @@ function JavaScriptPage() {
           className="fixed bottom-5 right-5 bg-yellow-400 text-black p-2 rounded-xl z-50"
           onClick={() => Top()}
         >
-          top
+          <ArrowUp size={20} color="white" />
         </button>
 
         {/* sidebar */}

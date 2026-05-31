@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import { ArrowUp } from "lucide-react"
 
 function Html() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -74,7 +75,7 @@ function Html() {
           className="fixed bottom-5 right-5 bg-red-400 p-2 rounded-xl "
           onClick={() => Top()}
         >
-          top
+          <ArrowUp size={20} color="white" />
         </button>
         {/* sidebar */}
         <div
