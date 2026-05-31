@@ -471,7 +471,7 @@ function Html() {
           {/* lesson 3 */}
           <div
             id="headings-and-texts"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 3
@@ -652,7 +652,7 @@ function Html() {
           {/* lesson 4 */}
           <div
             id="links-and-images"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 4
@@ -678,7 +678,7 @@ function Html() {
             </p>
 
             <div
-              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8"
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 flex flex-wrap"
               dir="ltr"
             >
               <span className="text-pink-400">&lt;a </span>
@@ -828,7 +828,7 @@ function Html() {
                   key={item.tag}
                   className="bg-[#0f1117] border border-white/7 rounded-xl p-4 flex items-center gap-4"
                 >
-                  <p className="text-pink-400 font-mono text-sm min-w-[120px]">
+                  <p className="text-pink-400 font-mono text-sm min-w-[120px] ">
                     {item.tag}
                   </p>
 
@@ -843,7 +843,7 @@ function Html() {
           {/* lesson 5 */}
           <div
             id="lists"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 5
@@ -1074,7 +1074,7 @@ function Html() {
           {/* lesson 6 */}
           <div
             id="tables"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 6
@@ -1159,33 +1159,33 @@ function Html() {
               Table Example
             </p>
 
-            <div className="bg-[#0f1117] border border-white/10 rounded-xl overflow-hidden mb-8">
-              <table className="w-full text-sm text-left">
+            <div className="bg-[#0f1117] border border-white/10 rounded-xl  mb-8">
+              <table className="w-full text-sm text-left ">
                 <thead className="bg-white/5 text-slate-300">
                   <tr>
-                    <th className="p-4 border-b border-white/10">Language</th>
-                    <th className="p-4 border-b border-white/10">Type</th>
-                    <th className="p-4 border-b border-white/10">Difficulty</th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Language</th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Type</th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Difficulty</th>
                   </tr>
                 </thead>
 
                 <tbody className="text-slate-400">
                   <tr className="border-b border-white/5">
-                    <td className="p-4">HTML</td>
-                    <td className="p-4">Markup</td>
-                    <td className="p-4">Easy</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">HTML</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">Markup</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">Easy</td>
                   </tr>
 
                   <tr className="border-b border-white/5">
-                    <td className="p-4">CSS</td>
-                    <td className="p-4">Styling</td>
-                    <td className="p-4">Medium</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">CSS</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">Styling</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">Medium</td>
                   </tr>
 
                   <tr>
-                    <td className="p-4">JavaScript</td>
-                    <td className="p-4">Programming</td>
-                    <td className="p-4">Hard</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">JavaScript</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">Programming</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">Hard</td>
                   </tr>
                 </tbody>
               </table>
@@ -1286,7 +1286,7 @@ function Html() {
           {/* lesson 7 */}
           <div
             id="forms"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 7
@@ -1462,7 +1462,7 @@ function Html() {
                   example: "Single choice selection",
                 },
               ].map((item) => (
-                <div key={item.type} className="flex items-center gap-4">
+                <div key={item.type} className="flex items-center gap-4 max-sm:gap-[1px]">
                   <span className="text-pink-400 font-mono text-xs min-w-[140px]">
                     {item.type}
                   </span>
@@ -1524,7 +1524,7 @@ function Html() {
           {/* lesson 8 */}
           <div
             id="semantic-elements"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 8
@@ -1738,7 +1738,7 @@ function Html() {
           {/* lesson 9 */}
           <div
             id="attributes"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 9
@@ -1958,8 +1958,8 @@ function Html() {
                   desc: "Limits how many characters the user can type.",
                 },
               ].map((item) => (
-                <div key={item.attr} className="flex items-start gap-4">
-                  <span className="text-pink-400 font-mono text-xs min-w-[160px] pt-0.5">
+                <div key={item.attr} className="flex items-start gap-4 max-sm:gap-0">
+                  <span className="text-pink-400 font-mono text-xs min-w-[160px] max-sm:min-w-fit pt-0.5">
                     {item.attr}
                   </span>
                   <span className="text-slate-400 text-xs leading-relaxed">
@@ -2104,7 +2104,7 @@ function Html() {
           {/* lesson 10 */}
           <div
             id="media-elements"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 10
@@ -2244,8 +2244,8 @@ function Html() {
               <span className="text-pink-400">&lt;iframe </span>
               <span className="text-blue-400">src</span>
               <span className="text-slate-300">=</span>
-              <span className="text-green-400">
-                "https://www.youtube.com/embed/xyz"
+              <span className="text-green-400 ">
+                "www.youtube.com"
               </span>
               <br />
               <span className="pl-8 text-blue-400">width</span>
@@ -2299,12 +2299,12 @@ function Html() {
               ].map((item) => (
                 <div
                   key={item.tag}
-                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4 flex items-center gap-4"
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4 flex items-center gap-4 "
                 >
-                  <p className="text-pink-400 font-mono text-sm min-w-[100px]">
+                  <p className="text-pink-400 font-mono text-sm min-w-[100px] max-sm:min-w-fit">
                     {item.tag}
                   </p>
-                  <p className="text-xs text-slate-500 leading-relaxed">
+                  <p className="text-xs text-slate-500 leading-relaxed max-sm:max-w-fit">
                     {item.desc}
                   </p>
                 </div>
@@ -2315,7 +2315,7 @@ function Html() {
           {/* lesson 11 */}
           <div
             id="meta-seo"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 11
@@ -2559,7 +2559,7 @@ function Html() {
                   key={item.tag}
                   className="bg-[#0f1117] border border-white/7 rounded-xl p-4 flex items-start gap-4"
                 >
-                  <p className="text-pink-400 font-mono text-xs min-w-[160px] pt-0.5">
+                  <p className="text-pink-400 font-mono text-xs min-w-[160px] max-sm:min-w-fit pt-0.5">
                     {item.tag}
                   </p>
                   <p className="text-xs text-slate-500 leading-relaxed">
@@ -2573,7 +2573,7 @@ function Html() {
           {/* lesson 12 */}
           <div
             id="html-entities"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 12
@@ -2675,9 +2675,9 @@ function Html() {
               <table className="w-full text-sm text-left" dir="ltr">
                 <thead className="bg-white/5 text-slate-300">
                   <tr>
-                    <th className="p-4 border-b border-white/10">Entity</th>
-                    <th className="p-4 border-b border-white/10">Renders As</th>
-                    <th className="p-4 border-b border-white/10">
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Entity</th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Renders As</th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">
                       Description
                     </th>
                   </tr>
@@ -2742,13 +2742,13 @@ function Html() {
                     { entity: "&amp;star;", render: "★", desc: "Star symbol." },
                   ].map((row) => (
                     <tr key={row.entity} className="border-b border-white/5">
-                      <td className="p-4 font-mono text-pink-400 text-xs">
+                      <td className="p-4 max-sm:p-2 max-sm:text-xs font-mono text-pink-400 text-xs">
                         {row.entity}
                       </td>
-                      <td className="p-4 text-slate-200 font-semibold">
+                      <td className="p-4 max-sm:p-2 max-sm:text-xs text-slate-200 font-semibold">
                         {row.render}
                       </td>
-                      <td className="p-4 text-xs text-slate-500">{row.desc}</td>
+                      <td className="p-4  max-sm:p-2  max-sm:text-xs text-xs text-slate-500">{row.desc}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -2796,7 +2796,7 @@ function Html() {
           {/* lesson 13 */}
           <div
             id="block-vs-inline"
-            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl max-w-3xl mb-10 max-sm:p-5"
           >
             <span className="inline-block bg-orange-500/10 text-orange-400 text-xs px-4 py-1 rounded-full mb-4">
               Lesson 13
