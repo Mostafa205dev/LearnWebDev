@@ -1380,6 +1380,1649 @@ setUser({
               </ul>
             </div>
           </div>
+
+          {/* lesson 6 */}
+          <div
+            id="events"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 6
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Handling Events
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Events in React are used to handle user interactions like clicks,
+              typing, hovering, and form submissions.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              What Are Events?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Click Events",
+                  desc: "Triggered when a user clicks a button.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "Input Events",
+                  desc: "Triggered when a user types in a field.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Mouse Events",
+                  desc: "Triggered on hover or mouse movement.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Form Events",
+                  desc: "Triggered when submitting a form.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Click Event Example
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  function handleClick() {
+    alert("Button Clicked!");
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click Me
+    </button>
+  );
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 In React, event names use camelCase like onClick instead of
+              onclick.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Inline Event Handler
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`<button onClick={() => alert("Hello!")}>
+  Click
+</button>`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Input Event Example
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  function handleChange(e) {
+    console.log(e.target.value);
+  }
+
+  return (
+    <input onChange={handleChange} />
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Form Submit Event
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert("Form Submitted");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Send</button>
+    </form>
+  );
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 e.preventDefault() stops page refresh in forms.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Passing Parameters
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  function greet(name) {
+    alert("Hello " + name);
+  }
+
+  return (
+    <button onClick={() => greet("Mostafa")}>
+      Greet
+    </button>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Event Object
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  function handleClick(e) {
+    console.log(e.target);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click
+    </button>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5">
+              <p className="text-cyan-400 text-sm font-medium mb-3">
+                Event Rules
+              </p>
+
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Use camelCase for events (onClick, onChange).</li>
+                <li>• Pass function reference, not function call.</li>
+                <li>• Use arrow functions for parameters.</li>
+                <li>• Use e.preventDefault() for forms.</li>
+                <li>• Events are React Synthetic Events.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* lesson 7 */}
+          <div
+            id="rendering"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 7
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Conditional Rendering
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Conditional rendering means showing different UI based on
+              conditions like state, props, or logic inside your component.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why Conditional Rendering?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Dynamic UI",
+                  desc: "Show different content based on user actions.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "Better UX",
+                  desc: "Display only relevant information.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Control Flow",
+                  desc: "Decide what the user should see.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "State Driven",
+                  desc: "UI changes automatically with state.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              If Statement Example
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const isLoggedIn = true;
+
+  if (isLoggedIn) {
+    return <h1>Welcome Back</h1>;
+  }
+
+  return <h1>Please Login</h1>;
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Ternary Operator (Most Used)
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const isLoggedIn = false;
+
+  return (
+    <h1>
+      {isLoggedIn ? "Welcome Back" : "Please Login"}
+    </h1>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Logical AND (&&)
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3">
+              Used when you want to show something only if condition is true.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const isLoggedIn = true;
+
+  return (
+    <div>
+      {isLoggedIn && <h1>Dashboard</h1>}
+    </div>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Conditional With State
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useState } from "react";
+
+function App() {
+  const [isOn, setIsOn] = useState(false);
+
+  return (
+    <div>
+      <h1>{isOn ? "ON" : "OFF"}</h1>
+
+      <button onClick={() => setIsOn(!isOn)}>
+        Toggle
+      </button>
+    </div>
+  );
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 Conditional rendering is often combined with useState.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Show / Hide Elements
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const [show, setShow] = useState(true);
+
+  return (
+    <div>
+      <button onClick={() => setShow(!show)}>
+        Toggle Text
+      </button>
+
+      {show && <p>Hello React</p>}
+    </div>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5">
+              <p className="text-cyan-400 text-sm font-medium mb-3">
+                Conditional Rendering Rules
+              </p>
+
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Use if/else for complex logic.</li>
+                <li>• Use ternary for simple conditions.</li>
+                <li>• Use && when only condition is needed.</li>
+                <li>• Combine with useState for dynamic UI.</li>
+                <li>• Keep conditions simple and readable.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* lesson 8 */}
+          <div
+            id="lists"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 8
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Lists & Keys
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Lists in React are used to render multiple elements dynamically.
+              Keys help React identify each item and update the UI efficiently.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why Lists?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Dynamic Data",
+                  desc: "Render arrays of data easily.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "Reusable UI",
+                  desc: "Same component for multiple items.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Clean Code",
+                  desc: "Avoid repeating code manually.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Efficient Rendering",
+                  desc: "React updates only changed items.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Rendering Lists
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const users = ["Ali", "Ahmed", "Mostafa"];
+
+  return (
+    <ul>
+      {users.map((user) => (
+        <li>{user}</li>
+      ))}
+    </ul>
+  );
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-red-500 bg-red-500/5 rounded-r-lg p-4 text-sm text-red-200 leading-relaxed mb-8">
+              ⚠️ Missing key will cause warning in console.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Using Keys
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3">
+              Keys help React identify each element in a list.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const users = [
+    { id: 1, name: "Ali" },
+    { id: 2, name: "Ahmed" },
+    { id: 3, name: "Mostafa" }
+  ];
+
+  return (
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>
+          {user.name}
+        </li>
+      ))}
+    </ul>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why Keys Are Important?
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`React uses keys to:
+- Track items in a list
+- Update only changed items
+- Improve performance
+- Avoid rendering bugs`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Wrong Usage Example
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`{users.map((user, index) => (
+  <li key={index}>
+    {user.name}
+  </li>
+))}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-red-500 bg-red-500/5 rounded-r-lg p-4 text-sm text-red-200 leading-relaxed mb-8">
+              ⚠️ Using index as key is not recommended if list can change.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              List With Components
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function User({ name }) {
+  return <li>{name}</li>;
+}
+
+function App() {
+  const users = ["Ali", "Ahmed"];
+
+  return (
+    <ul>
+      {users.map((user, i) => (
+        <User key={i} name={user} />
+      ))}
+    </ul>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5">
+              <p className="text-cyan-400 text-sm font-medium mb-3">
+                Lists & Keys Rules
+              </p>
+
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Use map() to render lists.</li>
+                <li>• Each item must have a unique key.</li>
+                <li>• Prefer stable IDs over array index.</li>
+                <li>• Keys help React optimize rendering.</li>
+                <li>• Never skip keys in dynamic lists.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* lesson 9 */}
+          <div
+            id="effects"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 9
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              useEffect Hook
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              useEffect is a React Hook used to handle side effects like
+              fetching data, timers, subscriptions, and interacting with the
+              browser.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              What Is a Side Effect?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Fetch Data",
+                  desc: "Load data from APIs or servers.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "Timers",
+                  desc: "setTimeout and setInterval logic.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "DOM Updates",
+                  desc: "Direct interaction with browser APIs.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Subscriptions",
+                  desc: "Listen to external data sources.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Import useEffect
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useEffect } from "react";`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Basic useEffect
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`useEffect(() => {
+  console.log("Component Mounted");
+});`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-red-500 bg-red-500/5 rounded-r-lg p-4 text-sm text-red-200 leading-relaxed mb-8">
+              ⚠️ This runs on every render (not recommended usually).
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Run Once (Component Mount)
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap ">
+                {`useEffect(() => {
+  console.log("Runs only once");
+}, []);`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Dependency Array
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3">
+              useEffect runs when dependencies change.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap ">
+                {`useEffect(() => {
+  console.log("Count changed");
+}, [count]);`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Fetching Data Example
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap ">
+                {`useEffect(() => {
+  fetch("https://api.example.com/users")
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}, []);`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Cleanup Function
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3">
+              Used to clean timers or subscriptions.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap ">
+                {`useEffect(() => {
+  const timer = setInterval(() => {
+    console.log("Running...");
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, []);`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 Cleanup runs when component unmounts.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Common Use Cases
+            </p>
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5 mb-8">
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Fetching API data</li>
+                <li>• Setting timers (setTimeout / setInterval)</li>
+                <li>• Listening to events</li>
+                <li>• Updating document title</li>
+                <li>• Syncing with localStorage</li>
+              </ul>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5">
+              <p className="text-cyan-400 text-sm font-medium mb-3">
+                useEffect Rules
+              </p>
+
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Runs after rendering.</li>
+                <li>• Use [] to run once.</li>
+                <li>• Use dependencies to control updates.</li>
+                <li>• Always cleanup when needed.</li>
+                <li>• Avoid unnecessary effects.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* lesson 10 */}
+          <div
+            id="forms"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 10
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Forms in React
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Forms in React are used to collect user input like text, emails,
+              passwords, and send data to state or APIs.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why Forms Matter?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "User Input",
+                  desc: "Collect data from users.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "State Driven",
+                  desc: "Form data is stored in state.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Dynamic UI",
+                  desc: "UI updates while typing.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Validation Ready",
+                  desc: "Easy to validate input data.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Controlled Component
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3">
+              React controls the input using state.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("");
+
+  return (
+    <input
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      placeholder="Enter your name"
+    />
+  );
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 Controlled input means React is the single source of truth.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Multiple Inputs
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const [form, setForm] = useState({
+    name: "",
+    email: ""
+  });
+
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  return (
+    <>
+      <input
+        name="name"
+        value={form.name}
+        onChange={handleChange}
+      />
+
+      <input
+        name="email"
+        value={form.email}
+        onChange={handleChange}
+      />
+    </>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Form Submit
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const [name, setName] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(name);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <button type="submit">
+        Send
+      </button>
+    </form>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Uncontrolled Component
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3">
+              Using ref instead of state.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useRef } from "react";
+
+function App() {
+  const inputRef = useRef();
+
+  function handleSubmit() {
+    console.log(inputRef.current.value);
+  }
+
+  return (
+    <>
+      <input ref={inputRef} />
+
+      <button onClick={handleSubmit}>
+        Send
+      </button>
+    </>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5">
+              <p className="text-cyan-400 text-sm font-medium mb-3">
+                Forms Rules
+              </p>
+
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Controlled inputs use state.</li>
+                <li>• Always use onChange for inputs.</li>
+                <li>• Use e.preventDefault() on submit.</li>
+                <li>• Prefer controlled components.</li>
+                <li>• Use useRef only when needed.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* lesson 11 */}
+          <div
+            id="lifting-state"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 11
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Lifting State Up
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Lifting state up means moving state to the closest common parent
+              component so multiple child components can share and sync the same
+              data.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why Lift State Up?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Shared Data",
+                  desc: "Multiple components use the same state.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "Single Source",
+                  desc: "One place controls the data.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Sync UI",
+                  desc: "All components update together.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Avoid Duplication",
+                  desc: "No repeated state in multiple components.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Problem Without Lifting State
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3">
+              Each component has its own state → no sync between them.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function ChildA() {
+  const [value, setValue] = useState("");
+}
+
+function ChildB() {
+  const [value, setValue] = useState("");
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-red-500 bg-red-500/5 rounded-r-lg p-4 text-sm text-red-200 leading-relaxed mb-8">
+              ⚠️ These states are independent and not synchronized.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Solution: Lift State Up
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3">
+              Move state to the parent component and pass it as props.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function Parent() {
+  const [value, setValue] = useState("");
+
+  return (
+    <>
+      <ChildA value={value} setValue={setValue} />
+      <ChildB value={value} />
+    </>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Child Component Receiving Props
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function ChildA({ value, setValue }) {
+  return (
+    <input
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    />
+  );
+}`}
+              </pre>
+            </div>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function ChildB({ value }) {
+  return <h1>{value}</h1>;
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              How It Works
+            </p>
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5 mb-8">
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• State is stored in the parent component.</li>
+                <li>• Data is passed down via props.</li>
+                <li>• Child components update state through functions.</li>
+                <li>• UI stays synchronized across components.</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 Lifting state up is one of the most important React patterns
+              for sharing data.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5">
+              <p className="text-cyan-400 text-sm font-medium mb-3">Key Rule</p>
+
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Keep state in the lowest common parent that needs access to it.
+              </p>
+            </div>
+          </div>
+
+          {/* lesson 12 */}
+          <div
+            id="context"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 12
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Context API
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Context API allows you to share data between components without
+              passing props manually at every level (no prop drilling).
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Problem: Prop Drilling
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`App → Parent → Child → GrandChild
+
+props passed again and again ❌`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-red-500 bg-red-500/5 rounded-r-lg p-4 text-sm text-red-200 leading-relaxed mb-8">
+              ⚠️ Passing props through many layers makes code messy and hard to
+              maintain.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Solution: Context API
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3">
+              Create a global context that any component can access directly.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              1. Create Context
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { createContext } from "react";
+
+export const UserContext = createContext();`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              2. Provide Context (Provider)
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const user = { name: "Mostafa" };
+
+  return (
+    <UserContext.Provider value={user}>
+      <Child />
+    </UserContext.Provider>
+  );
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 Provider makes data available to all child components.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              3. Consume Context (useContext)
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useContext } from "react";
+import { UserContext } from "./UserContext";
+
+function Child() {
+  const user = useContext(UserContext);
+
+  return <h1>{user.name}</h1>;
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Full Flow
+            </p>
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5 mb-8">
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Create Context</li>
+                <li>• Wrap App with Provider</li>
+                <li>• Pass value to Provider</li>
+                <li>• Use useContext in any child</li>
+              </ul>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              When To Use Context
+            </p>
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5 mb-8">
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Theme (dark/light mode)</li>
+                <li>• User authentication</li>
+                <li>• Language (i18n)</li>
+                <li>• Global settings</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed">
+              💡 Use Context only for global data, not everything (not for small
+              local state).
+            </div>
+          </div>
+
+          {/* lesson 13 */}
+          <div
+            id="router"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 13
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              React Router
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              React Router is used to create multi-page navigation in React
+              without reloading the page (Single Page Application).
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why React Router?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "No Page Reload",
+                  desc: "Navigation is instant.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "SPA System",
+                  desc: "Single Page Application behavior.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Better UX",
+                  desc: "Fast and smooth transitions.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Organized Pages",
+                  desc: "Split app into routes.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Install React Router
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300  max-sm:text-xs break-words whitespace-pre-wrap">
+                {`npm install react-router-dom`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Setup Router
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300  max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Create Pages
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300  max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function Home() {
+  return <h1>Home Page</h1>;
+}
+
+function About() {
+  return <h1>About Page</h1>;
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Navigation Links
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto "
+              dir="ltr"
+            >
+              <pre className="text-slate-300  max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { Link } from "react-router-dom";
+
+function Navbar() {
+  return (
+    <>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+    </>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              NavLink (Active Link Styling)
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300  max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { NavLink } from "react-router-dom";
+
+<NavLink
+  to="/about"
+  className={({ isActive }) =>
+    isActive ? "text-yellow-400" : "text-white"
+  }
+>
+  About
+</NavLink>`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Dynamic Routes
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300  max-sm:text-xs break-words whitespace-pre-wrap">
+                {`<Route path="/user/:id" element={<User />} />`}
+              </pre>
+            </div>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300  max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useParams } from "react-router-dom";
+
+function User() {
+  const { id } = useParams();
+
+  return <h1>User ID: {id}</h1>;
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5">
+              <p className="text-cyan-400 text-sm font-medium mb-3">
+                React Router Rules
+              </p>
+
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Use BrowserRouter once at top level.</li>
+                <li>• Routes define pages.</li>
+                <li>• Link replaces anchor tag.</li>
+                <li>• NavLink for active styling.</li>
+                <li>• useParams for dynamic routes.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </>
