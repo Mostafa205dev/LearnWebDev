@@ -304,7 +304,7 @@ function JavaScriptPage() {
                     className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs overflow-x-auto"
                     dir="ltr"
                   >
-                    <pre className="text-slate-300 whitespace-pre-wrap">
+                    <pre className="text-slate-300 whitespace-pre-wrap break-words"> 
                       {item.example}
                     </pre>
                   </div>
@@ -1955,7 +1955,7 @@ console.log(user);`}
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap break-words">
                 {`const user = {
   name: "Sara",
   address: {
@@ -2073,7 +2073,7 @@ user.age = 23;`,
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                 {`document.getElementById("title");
 
 document.querySelector(".box");
@@ -2084,7 +2084,7 @@ document.querySelectorAll(".item");`}
 
             <hr className="border-white/10 mb-8" />
 
-            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4 ">
               Changing Text & Content
             </p>
 
@@ -2092,7 +2092,7 @@ document.querySelectorAll(".item");`}
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                 {`const title = document.getElementById("title");
 
 title.textContent = "Hello World";
@@ -2110,7 +2110,7 @@ title.innerHTML = "<span>New Title</span>";`}
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                 {`const box = document.querySelector(".box");
 
 box.style.backgroundColor = "red";
@@ -2129,7 +2129,7 @@ box.style.padding = "20px";`}
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                 {`const div = document.createElement("div");
 
 div.textContent = "New Element";
@@ -2151,7 +2151,7 @@ div.remove();`}
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                 {`const btn = document.querySelector("button");
 
 btn.addEventListener("click", () => {
@@ -2195,7 +2195,7 @@ btn.addEventListener("click", () => {
                     className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs overflow-x-auto"
                     dir="ltr"
                   >
-                    <pre className="text-slate-300 whitespace-pre-wrap">
+                    <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                       {item.code}
                     </pre>
                   </div>
@@ -2232,7 +2232,7 @@ btn.addEventListener("click", () => {
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                 {`const btn = document.querySelector("button");
 
 btn.addEventListener("click", () => {
@@ -2284,7 +2284,7 @@ btn.addEventListener("click", () => {
                     className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs"
                     dir="ltr"
                   >
-                    <pre className="text-slate-300 whitespace-pre-wrap">
+                    <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                       {item.example}
                     </pre>
                   </div>
@@ -2302,7 +2302,7 @@ btn.addEventListener("click", () => {
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                 {`document.addEventListener("keydown", (e) => {
   console.log(e.key);
 });
@@ -2323,7 +2323,7 @@ document.addEventListener("keyup", (e) => {
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                 {`const form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {
@@ -2343,7 +2343,7 @@ form.addEventListener("submit", (e) => {
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                 {`const input = document.querySelector("input");
 
 input.addEventListener("input", (e) => {
@@ -2391,7 +2391,7 @@ input.addEventListener("input", (e) => {
                     className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs"
                     dir="ltr"
                   >
-                    <pre className="text-slate-300 whitespace-pre-wrap">
+                    <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                       {item.code}
                     </pre>
                   </div>
@@ -2788,7 +2788,7 @@ const result = [...a, ...b];`,
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">{`fetch("https://api.example.com/users")
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">{`fetch("https://api.example.com/users")
   .then((res) => res.json())
   .then((data) => console.log(data))
   .catch((err) => console.error("Error:", err));`}</pre>
@@ -2868,7 +2868,7 @@ const result = [...a, ...b];`,
                     className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs overflow-x-auto"
                     dir="ltr"
                   >
-                    <pre className="text-slate-300 whitespace-pre-wrap">
+                    <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                       {item.example}
                     </pre>
                   </div>
@@ -2954,7 +2954,7 @@ const result = [...a, ...b];`,
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">{`async function getData() {
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">{`async function getData() {
   const res = await fetch("https://api.example.com/data");
   const data = await res.json();
   console.log(data);
@@ -3040,7 +3040,7 @@ getData();`}</pre>
                     className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs overflow-x-auto"
                     dir="ltr"
                   >
-                    <pre className="text-slate-300 whitespace-pre-wrap">
+                    <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                       {item.example}
                     </pre>
                   </div>
@@ -3128,7 +3128,7 @@ getData();`}</pre>
               className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
               dir="ltr"
             >
-              <pre className="text-slate-300 whitespace-pre-wrap">{`// Save
+              <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">{`// Save
 localStorage.setItem("username", "Ahmed");
 
 // Read
@@ -3212,7 +3212,7 @@ if (theme) {
                     className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs overflow-x-auto"
                     dir="ltr"
                   >
-                    <pre className="text-slate-300 whitespace-pre-wrap">
+                    <pre className="text-slate-300 whitespace-pre-wrap max-sm:text-xs break-words">
                       {item.example}
                     </pre>
                   </div>
