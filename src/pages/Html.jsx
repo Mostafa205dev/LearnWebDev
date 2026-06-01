@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { ArrowUp } from "lucide-react"
+import { ArrowUp } from "lucide-react";
 
 function Html() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -67,7 +67,17 @@ function Html() {
           className="fixed top-25 left-0 bg-red-400 p-2 rounded-xl sm:hidden"
           onClick={() => setShowSidebar(!showSidebar)}
         >
-          nav
+          <div className="flex flex-col gap-1 w-6">
+            <span
+              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${showSidebar ? "rotate-45 translate-y-1.5" : ""}`}
+            ></span>
+            <span
+              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${showSidebar ? "opacity-0" : ""}`}
+            ></span>
+            <span
+              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${showSidebar ? "-rotate-45 -translate-y-1.5" : ""}`}
+            ></span>
+          </div>
         </button>
 
         {/* button to top*/}
@@ -1164,9 +1174,15 @@ function Html() {
               <table className="w-full text-sm text-left ">
                 <thead className="bg-white/5 text-slate-300">
                   <tr>
-                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Language</th>
-                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Type</th>
-                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Difficulty</th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">
+                      Language
+                    </th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">
+                      Type
+                    </th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">
+                      Difficulty
+                    </th>
                   </tr>
                 </thead>
 
@@ -1184,8 +1200,12 @@ function Html() {
                   </tr>
 
                   <tr>
-                    <td className="p-4 max-sm:p-2 max-sm:text-xs">JavaScript</td>
-                    <td className="p-4 max-sm:p-2 max-sm:text-xs">Programming</td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">
+                      JavaScript
+                    </td>
+                    <td className="p-4 max-sm:p-2 max-sm:text-xs">
+                      Programming
+                    </td>
                     <td className="p-4 max-sm:p-2 max-sm:text-xs">Hard</td>
                   </tr>
                 </tbody>
@@ -1463,7 +1483,10 @@ function Html() {
                   example: "Single choice selection",
                 },
               ].map((item) => (
-                <div key={item.type} className="flex items-center gap-4 max-sm:gap-[1px]">
+                <div
+                  key={item.type}
+                  className="flex items-center gap-4 max-sm:gap-[1px]"
+                >
                   <span className="text-pink-400 font-mono text-xs min-w-[140px]">
                     {item.type}
                   </span>
@@ -1959,7 +1982,10 @@ function Html() {
                   desc: "Limits how many characters the user can type.",
                 },
               ].map((item) => (
-                <div key={item.attr} className="flex items-start gap-4 max-sm:gap-0">
+                <div
+                  key={item.attr}
+                  className="flex items-start gap-4 max-sm:gap-0"
+                >
                   <span className="text-pink-400 font-mono text-xs min-w-[160px] max-sm:min-w-fit pt-0.5">
                     {item.attr}
                   </span>
@@ -2245,9 +2271,7 @@ function Html() {
               <span className="text-pink-400">&lt;iframe </span>
               <span className="text-blue-400">src</span>
               <span className="text-slate-300">=</span>
-              <span className="text-green-400 ">
-                "www.youtube.com"
-              </span>
+              <span className="text-green-400 ">"www.youtube.com"</span>
               <br />
               <span className="pl-8 text-blue-400">width</span>
               <span className="text-slate-300">=</span>
@@ -2676,8 +2700,12 @@ function Html() {
               <table className="w-full text-sm text-left" dir="ltr">
                 <thead className="bg-white/5 text-slate-300">
                   <tr>
-                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Entity</th>
-                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">Renders As</th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">
+                      Entity
+                    </th>
+                    <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">
+                      Renders As
+                    </th>
                     <th className="p-4 max-sm:p-2 border-b border-white/10 max-sm:text-xs">
                       Description
                     </th>
@@ -2749,7 +2777,9 @@ function Html() {
                       <td className="p-4 max-sm:p-2 max-sm:text-xs text-slate-200 font-semibold">
                         {row.render}
                       </td>
-                      <td className="p-4  max-sm:p-2  max-sm:text-xs text-xs text-slate-500">{row.desc}</td>
+                      <td className="p-4  max-sm:p-2  max-sm:text-xs text-xs text-slate-500">
+                        {row.desc}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
