@@ -2711,6 +2711,1199 @@ const result = [...a, ...b];`,
               ))}
             </div>
           </div>
+
+          <div
+            id="fetch"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 14
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Fetch API
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              The Fetch API allows you to make HTTP requests to servers and
+              external APIs directly from the browser. It returns a Promise that
+              resolves with the response.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              What is Fetch?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Built-in Browser API",
+                  desc: "Fetch is natively available in all modern browsers — no libraries needed.",
+                  color: "text-yellow-400",
+                },
+                {
+                  title: "Returns a Promise",
+                  desc: "Fetch is asynchronous and uses Promises to handle responses.",
+                  color: "text-orange-400",
+                },
+                {
+                  title: "Works with JSON",
+                  desc: "Easily parse JSON responses using the .json() method on the response object.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Supports All Methods",
+                  desc: "Use GET, POST, PUT, DELETE and more with the options parameter.",
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Basic Fetch GET Request
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              Use <code className="text-yellow-300">fetch()</code> with a URL to
+              get data from an API.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">{`fetch("https://api.example.com/users")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.error("Error:", err));`}</pre>
+            </div>
+
+            <div className="border-l-4 border-yellow-500 bg-yellow-500/5 rounded-r-lg p-4 text-sm text-yellow-200 leading-relaxed mb-8">
+              💡 Always add <code className="text-yellow-100">.catch()</code> to
+              handle network errors. Fetch only rejects on network failure, not
+              on HTTP errors like 404.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Common Fetch Patterns
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  tag: "GET Request",
+                  desc: "Fetch data from an API and display it.",
+                  example: `fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then((res) => res.json())
+  .then((data) => console.log(data.title));`,
+                  color: "text-yellow-400",
+                },
+                {
+                  tag: "POST Request",
+                  desc: "Send data to a server using the POST method.",
+                  example: `fetch("https://api.example.com/users", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name: "Ahmed", age: 25 }),
+})
+  .then((res) => res.json())
+  .then((data) => console.log(data));`,
+                  color: "text-orange-400",
+                },
+                {
+                  tag: "Async / Await with Fetch",
+                  desc: "Use async/await for cleaner and more readable fetch calls.",
+                  example: `async function getUser() {
+  try {
+    const res = await fetch("https://api.example.com/users/1");
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}`,
+                  color: "text-blue-400",
+                },
+                {
+                  tag: "Check Response Status",
+                  desc: "Always check if the response was successful before using the data.",
+                  example: `fetch("https://api.example.com/data")
+  .then((res) => {
+    if (!res.ok) throw new Error("Request failed: " + res.status);
+    return res.json();
+  })
+  .then((data) => console.log(data));`,
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.tag}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.tag}
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed mb-3">
+                    {item.desc}
+                  </p>
+                  <div
+                    className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs overflow-x-auto"
+                    dir="ltr"
+                  >
+                    <pre className="text-slate-300 whitespace-pre-wrap">
+                      {item.example}
+                    </pre>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            id="async-await"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 15
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Async / Await
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Async/Await is a modern way to handle asynchronous code in
+              JavaScript. It makes your code look and behave like synchronous
+              code, which makes it much easier to read and debug.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              What is Async / Await?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Built on Promises",
+                  desc: "Async/Await is just cleaner syntax on top of Promises — it doesn't replace them.",
+                  color: "text-yellow-400",
+                },
+                {
+                  title: "async Keyword",
+                  desc: "Adding async before a function makes it always return a Promise automatically.",
+                  color: "text-orange-400",
+                },
+                {
+                  title: "await Keyword",
+                  desc: "await pauses the function until the Promise resolves, then returns the result.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Error Handling",
+                  desc: "Use try/catch to handle errors cleanly instead of chaining .catch().",
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Basic Syntax
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              Use <code className="text-yellow-300">async</code> before the
+              function and <code className="text-yellow-300">await</code> before
+              any Promise.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">{`async function getData() {
+  const res = await fetch("https://api.example.com/data");
+  const data = await res.json();
+  console.log(data);
+}
+
+getData();`}</pre>
+            </div>
+
+            <div className="border-l-4 border-yellow-500 bg-yellow-500/5 rounded-r-lg p-4 text-sm text-yellow-200 leading-relaxed mb-8">
+              💡 <code className="text-yellow-100">await</code> can only be used
+              inside an <code className="text-yellow-100">async</code> function.
+              Using it outside will throw a syntax error.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Common Patterns
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  tag: "Async with Try / Catch",
+                  desc: "Always wrap await calls in try/catch to handle errors properly.",
+                  example: `async function getUser() {
+  try {
+    const res = await fetch("https://api.example.com/users/1");
+    if (!res.ok) throw new Error("Failed: " + res.status);
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error("Error:", err.message);
+  }
+}`,
+                  color: "text-yellow-400",
+                },
+                {
+                  tag: "Async Arrow Function",
+                  desc: "You can also use async with arrow functions.",
+                  example: `const getPost = async (id) => {
+  const res = await fetch(\`https://api.example.com/posts/\${id}\`);
+  const data = await res.json();
+  return data;
+};`,
+                  color: "text-orange-400",
+                },
+                {
+                  tag: "Multiple Awaits",
+                  desc: "You can await multiple requests one after another.",
+                  example: `async function loadPage() {
+  const user = await fetchUser();
+  const posts = await fetchPosts(user.id);
+  const comments = await fetchComments(posts[0].id);
+  console.log(comments);
+}`,
+                  color: "text-blue-400",
+                },
+                {
+                  tag: "Parallel Requests with Promise.all",
+                  desc: "Run multiple requests at the same time for better performance.",
+                  example: `async function loadAll() {
+  const [users, posts] = await Promise.all([
+    fetch("https://api.example.com/users").then(r => r.json()),
+    fetch("https://api.example.com/posts").then(r => r.json()),
+  ]);
+  console.log(users, posts);
+}`,
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.tag}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.tag}
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed mb-3">
+                    {item.desc}
+                  </p>
+                  <div
+                    className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs overflow-x-auto"
+                    dir="ltr"
+                  >
+                    <pre className="text-slate-300 whitespace-pre-wrap">
+                      {item.example}
+                    </pre>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            id="local-storage"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 16
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Local Storage
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Local Storage allows you to save data in the browser that persists
+              even after the page is refreshed or closed. It stores data as
+              key-value pairs with no expiration date.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              What is Local Storage?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Persistent Storage",
+                  desc: "Data stays in the browser even after closing the tab or restarting the browser.",
+                  color: "text-yellow-400",
+                },
+                {
+                  title: "Key-Value Pairs",
+                  desc: "Everything is stored as strings using a simple key and value system.",
+                  color: "text-orange-400",
+                },
+                {
+                  title: "Up to 5MB",
+                  desc: "Local Storage can hold around 5MB of data per origin in most browsers.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Synchronous API",
+                  desc: "Local Storage operations are synchronous and instantly available — no Promises needed.",
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Basic Syntax
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              Use{" "}
+              <code className="text-yellow-300">localStorage.setItem()</code> to
+              save and{" "}
+              <code className="text-yellow-300">localStorage.getItem()</code> to
+              read.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">{`// Save
+localStorage.setItem("username", "Ahmed");
+
+// Read
+const name = localStorage.getItem("username");
+console.log(name); // "Ahmed"
+
+// Delete
+localStorage.removeItem("username");
+
+// Clear all
+localStorage.clear();`}</pre>
+            </div>
+
+            <div className="border-l-4 border-yellow-500 bg-yellow-500/5 rounded-r-lg p-4 text-sm text-yellow-200 leading-relaxed mb-8">
+              💡 Local Storage only stores strings. To save objects or arrays,
+              use <code className="text-yellow-100">JSON.stringify()</code> when
+              saving and <code className="text-yellow-100">JSON.parse()</code>{" "}
+              when reading.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Common Patterns
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  tag: "Save & Read a String",
+                  desc: "Store simple text values like usernames or tokens.",
+                  example: `localStorage.setItem("token", "abc123");
+const token = localStorage.getItem("token");
+console.log(token); // "abc123"`,
+                  color: "text-yellow-400",
+                },
+                {
+                  tag: "Save & Read an Object",
+                  desc: "Convert objects to JSON strings before saving them.",
+                  example: `const user = { name: "Ahmed", age: 25 };
+localStorage.setItem("user", JSON.stringify(user));
+
+const saved = JSON.parse(localStorage.getItem("user"));
+console.log(saved.name); // "Ahmed"`,
+                  color: "text-orange-400",
+                },
+                {
+                  tag: "Save & Read an Array",
+                  desc: "Store arrays the same way using JSON.stringify and JSON.parse.",
+                  example: `const todos = ["Buy milk", "Read book", "Code"];
+localStorage.setItem("todos", JSON.stringify(todos));
+
+const list = JSON.parse(localStorage.getItem("todos"));
+console.log(list[0]); // "Buy milk"`,
+                  color: "text-blue-400",
+                },
+                {
+                  tag: "Check if Key Exists",
+                  desc: "getItem returns null if the key doesn't exist — always check before using.",
+                  example: `const theme = localStorage.getItem("theme");
+
+if (theme) {
+  document.body.className = theme;
+} else {
+  document.body.className = "light";
+}`,
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.tag}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.tag}
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed mb-3">
+                    {item.desc}
+                  </p>
+                  <div
+                    className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs overflow-x-auto"
+                    dir="ltr"
+                  >
+                    <pre className="text-slate-300 whitespace-pre-wrap">
+                      {item.example}
+                    </pre>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* lesson 17 */}
+          <div
+            id="modules"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 17
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              JavaScript Modules
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              JavaScript Modules allow you to split your code into multiple
+              files. This makes projects more organized, reusable, and easier to
+              maintain.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why Use Modules?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Better Organization",
+                  desc: "Separate features into different files instead of writing everything in one file.",
+                  color: "text-yellow-400",
+                },
+                {
+                  title: "Reusable Code",
+                  desc: "Export code once and import it wherever you need it.",
+                  color: "text-orange-400",
+                },
+                {
+                  title: "Maintainability",
+                  desc: "Large applications become easier to manage and update.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Avoid Global Variables",
+                  desc: "Modules create their own scope and reduce naming conflicts.",
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Exporting Code
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              Use the <code className="text-yellow-300">export</code> keyword to
+              make variables, functions, or classes available to other files.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`// math.js
+
+export function add(a, b) {
+  return a + b;
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Importing Code
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              Use the <code className="text-yellow-300">import</code> keyword to
+              use exported code from another file.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`// app.js
+
+import { add } from "./math.js";
+
+console.log(add(5, 3));`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-yellow-500 bg-yellow-500/5 rounded-r-lg p-4 text-sm text-yellow-200 leading-relaxed mb-8">
+              💡 When using modules in the browser, remember to add
+              <code className="text-yellow-100 mx-1">type="module"</code>
+              to your script tag.
+            </div>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`<script type="module" src="app.js"></script>`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Types Of Exports
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  tag: "Named Export",
+                  desc: "Export multiple items from a file and import them using curly braces.",
+                  example: `export const name = "Mostafa";
+
+import { name } from "./file.js";`,
+                  color: "text-yellow-400",
+                },
+                {
+                  tag: "Default Export",
+                  desc: "Export a single main value from a file.",
+                  example: `export default function greet() {}
+
+import greet from "./file.js";`,
+                  color: "text-orange-400",
+                },
+                {
+                  tag: "Multiple Exports",
+                  desc: "A file can export several variables and functions.",
+                  example: `export const age = 20;
+export const city = "Cairo";`,
+                  color: "text-blue-400",
+                },
+                {
+                  tag: "Import Everything",
+                  desc: "Import all exports under one object.",
+                  example: `import * as utils from "./utils.js";
+
+utils.add(1,2);`,
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.tag}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.tag}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed mb-3">
+                    {item.desc}
+                  </p>
+
+                  <div
+                    className="bg-black/30 border border-white/5 rounded-lg p-3 font-mono text-xs overflow-x-auto"
+                    dir="ltr"
+                  >
+                    <pre className="text-slate-300 whitespace-pre-wrap">
+                      {item.example}
+                    </pre>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* lesson 18 */}
+          <div
+            id="oop"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 18
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              OOP In JavaScript
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Object-Oriented Programming (OOP) is a programming paradigm that
+              helps organize code using objects and classes. It makes
+              applications easier to build, maintain, and reuse.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              OOP Concepts
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Class",
+                  desc: "A blueprint used to create objects.",
+                  color: "text-yellow-400",
+                },
+                {
+                  title: "Object",
+                  desc: "An instance created from a class.",
+                  color: "text-orange-400",
+                },
+                {
+                  title: "Properties",
+                  desc: "Variables that belong to an object.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Methods",
+                  desc: "Functions that belong to an object.",
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Creating A Class
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              Classes are used as templates for creating objects.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Creating Objects
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              Use the <code className="text-yellow-300">new</code> keyword to
+              create objects from a class.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`const user1 = new User("Mostafa", 20);
+
+console.log(user1.name);
+console.log(user1.age);`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-yellow-500 bg-yellow-500/5 rounded-r-lg p-4 text-sm text-yellow-200 leading-relaxed mb-8">
+              💡 The constructor runs automatically whenever a new object is
+              created.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Methods
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              Methods are functions inside a class.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`class User {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    console.log("Hello " + this.name);
+  }
+}
+
+const user = new User("Mostafa");
+
+user.greet();`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Inheritance
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              A class can inherit properties and methods from another class
+              using
+              <code className="text-yellow-300 mx-1">extends</code>.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Admin extends User {
+  deleteUser() {
+    console.log("User Deleted");
+  }
+}
+
+const admin = new Admin("Mostafa");
+
+admin.deleteUser();`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              The this Keyword
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`class Car {
+  constructor(model) {
+    this.model = model;
+  }
+
+  showModel() {
+    console.log(this.model);
+  }
+}
+
+const car = new Car("BMW");
+
+car.showModel();`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              OOP Benefits
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  tag: "Reusable Code",
+                  desc: "Create classes once and use them many times.",
+                  color: "text-yellow-400",
+                },
+                {
+                  tag: "Easy Maintenance",
+                  desc: "Large applications become easier to update.",
+                  color: "text-orange-400",
+                },
+                {
+                  tag: "Better Organization",
+                  desc: "Keeps related data and functions together.",
+                  color: "text-blue-400",
+                },
+                {
+                  tag: "Scalability",
+                  desc: "Makes large projects easier to grow.",
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.tag}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.tag}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* lesson 19 */}
+          <div
+            id="error-handling"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-yellow-500/10 text-yellow-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 19
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Error Handling In JavaScript
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Errors are common in programming. JavaScript provides tools to
+              detect, handle and recover from errors without crashing your
+              application.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              What Is An Error?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Syntax Error",
+                  desc: "Occurs when JavaScript code has invalid syntax.",
+                  color: "text-yellow-400",
+                },
+                {
+                  title: "Reference Error",
+                  desc: "Occurs when using a variable that doesn't exist.",
+                  color: "text-orange-400",
+                },
+                {
+                  title: "Type Error",
+                  desc: "Occurs when using a value incorrectly.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Runtime Error",
+                  desc: "Occurs while the program is running.",
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Try & Catch
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              Use <code className="text-yellow-300">try</code> to run code and
+              <code className="text-yellow-300 mx-1">catch</code> to handle
+              errors.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`try {
+  console.log(userName);
+} catch (error) {
+  console.log("Something went wrong!");
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-yellow-500 bg-yellow-500/5 rounded-r-lg p-4 text-sm text-yellow-200 leading-relaxed mb-8">
+              💡 The code inside catch only runs if an error happens.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Accessing Error Information
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`try {
+  console.log(userName);
+} catch (error) {
+  console.log(error.message);
+}`}
+              </pre>
+            </div>
+
+            <p className="text-sm text-slate-400 mb-8">
+              The error object contains useful information such as the error
+              message.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Finally
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              The <code className="text-yellow-300">finally</code> block runs
+              whether an error occurs or not.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`try {
+  console.log("Running...");
+} catch (error) {
+  console.log(error.message);
+} finally {
+  console.log("Finished");
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Throwing Custom Errors
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              You can create your own errors using the
+              <code className="text-yellow-300 mx-1">throw</code> keyword.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`const age = 15;
+
+if (age < 18) {
+  throw new Error("You must be 18 or older");
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Handling Async Errors
+            </p>
+
+            <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+              When using async/await, wrap your code in try/catch.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`async function getUsers() {
+  try {
+    const response = await fetch("/users");
+
+    const data = await response.json();
+
+    console.log(data);
+  } catch (error) {
+    console.log("Request Failed");
+  }
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Best Practices
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  tag: "Use try/catch",
+                  desc: "Handle errors gracefully instead of letting the app crash.",
+                  color: "text-yellow-400",
+                },
+                {
+                  tag: "Show Helpful Messages",
+                  desc: "Display meaningful error messages to users.",
+                  color: "text-orange-400",
+                },
+                {
+                  tag: "Use throw",
+                  desc: "Create custom errors when needed.",
+                  color: "text-blue-400",
+                },
+                {
+                  tag: "Handle Async Errors",
+                  desc: "Always wrap async/await code in try/catch.",
+                  color: "text-green-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.tag}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.tag}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
