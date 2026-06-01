@@ -2,6 +2,7 @@ import Home from "./pages/Home.jsx";
 import Html from "./pages/Html.jsx";
 import Css from "./pages/CSS.jsx";
 import JavaScript from "./pages/JavaScript.jsx";
+import React from "./pages/React.jsx";
 import Header from "./components/Header.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -23,7 +24,7 @@ export default function App() {
         <Route path="/html" element={<Html />} />
         <Route path="/css" element={<Css />} />
         <Route path="/javascript" element={<JavaScript />} />
-        <Route path="/react" element={<ComingSoonPage />} />
+        <Route path="/react" element={<React />} />
         <Route path="/tailwind" element={<ComingSoonPage />} />
       </Routes>
       {/* </main> */}
