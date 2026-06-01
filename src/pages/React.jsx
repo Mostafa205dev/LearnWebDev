@@ -2809,7 +2809,7 @@ function Child() {
 
           {/* lesson 13 */}
           <div
-            id="router"
+            id="routing"
             className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
           >
             <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
@@ -3020,6 +3020,232 @@ function User() {
                 <li>• Link replaces anchor tag.</li>
                 <li>• NavLink for active styling.</li>
                 <li>• useParams for dynamic routes.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* lesson 14 */}
+          <div
+            id="fetching"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 14
+            </span>
+
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+              Fetching Data in React
+            </h1>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Fetching data means getting information from an API (server) and
+              showing it inside your React app.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why Fetch Data?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Dynamic Content",
+                  desc: "Show real-time data from APIs.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "Live Apps",
+                  desc: "Build dashboards and social apps.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "External Data",
+                  desc: "Connect to backend servers.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Real Projects",
+                  desc: "Used in almost every app.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Basic Fetch (useEffect)
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useEffect } from "react";
+
+function App() {
+  useEffect(() => {
+    fetch("https://api.example.com/users")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
+
+  return <h1>Users</h1>;
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Store Data in State
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useEffect, useState } from "react";
+
+function App() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.example.com/users")
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
+
+  return (
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Async / Await Version (Cleaner)
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useEffect, useState } from "react";
+
+function App() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    async function getUsers() {
+      const res = await fetch("https://api.example.com/users");
+      const data = await res.json();
+      setUsers(data);
+    }
+
+    getUsers();
+  }, []);
+
+  return (
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Loading State
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  async function getData() {
+    const res = await fetch("https://api.example.com/users");
+    const data = await res.json();
+
+    setUsers(data);
+    setLoading(false);
+  }
+
+  getData();
+}, []);`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Conditional UI
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`return (
+  <div>
+    {loading ? (
+      <p>Loading...</p>
+    ) : (
+      users.map((u) => <p key={u.id}>{u.name}</p>)
+    )}
+  </div>
+);`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 Always show loading state when fetching data from APIs.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <div className="bg-[#0f1117] border border-white/7 rounded-xl p-5">
+              <p className="text-cyan-400 text-sm font-medium mb-3">
+                Fetching Rules
+              </p>
+
+              <ul className="text-xs text-slate-400 space-y-2">
+                <li>• Use useEffect for API calls.</li>
+                <li>• Store data in state.</li>
+                <li>• Always handle loading state.</li>
+                <li>• Use async/await for cleaner code.</li>
+                <li>• Always handle errors in real apps.</li>
               </ul>
             </div>
           </div>
