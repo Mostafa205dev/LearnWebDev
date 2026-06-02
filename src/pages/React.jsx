@@ -65,7 +65,7 @@ function React() {
 
         <link rel="canonical" href="https://learnwebdev.me/react" />
       </Helmet>
-    
+
       <h1 className="sr-only">Learn React — تعلم React </h1>
 
       <div className="bg-[#0f1117] min-h-screen text-white flex">
@@ -138,7 +138,6 @@ function React() {
               { id: "custom-hooks", label: "Custom Hooks" },
               { id: "performance", label: "Performance Basics" },
               { id: "project-structure", label: "Project Structure" },
-              { id: "deployment", label: "Deploying React Apps" },
             ].map((lesson) => (
               <a
                 key={lesson.id}
@@ -3249,6 +3248,770 @@ useEffect(() => {
                 <li>• Use async/await for cleaner code.</li>
                 <li>• Always handle errors in real apps.</li>
               </ul>
+            </div>
+          </div>
+
+          {/* lesson 15 */}
+          <div
+            id="custom-hooks"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 15
+            </span>
+
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
+              Custom Hooks
+            </h2>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Custom Hooks allow you to create your own reusable hooks using
+              React Hooks such as useState and useEffect. They help you avoid
+              repeating the same logic in multiple components.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              What Is A Custom Hook?
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                {
+                  title: "Reusable Logic",
+                  desc: "Write logic once and use it in multiple components.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "Cleaner Code",
+                  desc: "Keep components focused on rendering UI.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Built With Hooks",
+                  desc: "Custom Hooks are created using React Hooks.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Less Repetition",
+                  desc: "Avoid copying the same state logic everywhere.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-5"
+                >
+                  <p className={`text-sm font-medium mb-2 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why Do We Need Them?
+            </p>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-4">
+              Imagine you have many components that need a counter. Writing the
+              same useState logic again and again is not ideal.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`const [count, setCount] = useState(0);
+
+function increment() {
+  setCount(count + 1);
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 Instead of repeating this logic in many components, we can
+              create our own hook.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Creating A Custom Hook
+            </p>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-4">
+              A Custom Hook is simply a function that starts with "use" and uses
+              React Hooks internally.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useState } from "react";
+
+function useCounter() {
+  const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
+
+  return {
+    count,
+    increment,
+  };
+}`}
+              </pre>
+            </div>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-8">
+              Here we created our own hook called useCounter using React's
+              useState hook.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Using The Custom Hook
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function Counter() {
+  const {
+    count,
+    increment,
+  } = useCounter();
+
+  return (
+    <>
+      <h2>{count}</h2>
+
+      <button onClick={increment}>
+        Increase
+      </button>
+    </>
+  );
+}`}
+              </pre>
+            </div>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-8">
+              Notice that we use useCounter exactly like useState or any other
+              React Hook.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Another Example
+            </p>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-4">
+              We can create a hook to manage an input field.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`import { useState } from "react";
+
+function useInput() {
+  const [value, setValue] =
+    useState("");
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  return {
+    value,
+    handleChange,
+  };
+}`}
+              </pre>
+            </div>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const {
+    value,
+    handleChange,
+  } = useInput();
+
+  return (
+    <>
+      <input
+        type="text"
+        value={value}
+        onChange={handleChange}
+      />
+
+      <p>{value}</p>
+    </>
+  );
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Rules For Custom Hooks
+            </p>
+
+            <div className="flex flex-col gap-3 mb-8">
+              {[
+                "The function name must start with use.",
+                "Custom Hooks can use useState, useEffect and other hooks.",
+                "Keep hooks focused on reusable logic.",
+                "Do not call hooks inside loops or conditions.",
+                "Return any data or functions that components need.",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className="text-slate-300 text-sm">{item}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Summary
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  tag: "React Hooks",
+                  desc: "Custom Hooks are built using existing React Hooks.",
+                  color: "text-cyan-400",
+                },
+                {
+                  tag: "Reusable",
+                  desc: "Write logic once and use it many times.",
+                  color: "text-blue-400",
+                },
+                {
+                  tag: "Clean Code",
+                  desc: "Keep components simple and easy to read.",
+                  color: "text-green-400",
+                },
+                {
+                  tag: "Powerful",
+                  desc: "Create hooks for forms, counters, themes and more.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.tag}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.tag}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* lesson 16 */}
+          <div
+            id="performance"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 16
+            </span>
+
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
+              Performance Basics
+            </h2>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              React performance means making your app faster and avoiding
+              unnecessary re-renders. In simple words: render only what needs to
+              change.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              What Causes Slow Performance?
+            </p>
+
+            <div className="flex flex-col gap-3 mb-8">
+              {[
+                "Unnecessary re-renders",
+                "Heavy calculations inside components",
+                "Passing new objects/arrays every render",
+                "Not memoizing expensive logic",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className="text-slate-300 text-sm">{item}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Problem Example
+            </p>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-4">
+              Every time the parent component re-renders, the child also
+              re-renders even if nothing changed.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function Child() {
+  console.log("Child rendered");
+
+  return <h2>Child Component</h2>;
+}
+
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+
+      <Child />
+    </>
+  );
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 Even if Child doesn’t depend on state, it still re-renders.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Solution: React.memo
+            </p>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-4">
+              React.memo prevents unnecessary re-renders if props didn’t change.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`const Child = React.memo(function Child() {
+  console.log("Child rendered");
+
+  return <h2>Child Component</h2>;
+});`}
+              </pre>
+            </div>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-8">
+              Now Child will only re-render if its props change.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Avoid Recreating Objects
+            </p>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-4">
+              New objects/arrays cause re-renders even if values are the same.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function Parent() {
+  const data = { name: "Mostafa" };
+
+  return <Child data={data} />;
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 Every render creates a new object in memory.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Solution: useMemo
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`const data = useMemo(() => {
+  return { name: "Mostafa" };
+}, []);`}
+              </pre>
+            </div>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-8">
+              useMemo keeps the same object between renders unless dependencies
+              change.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Expensive Functions
+            </p>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-4">
+              If you have heavy calculations, React will re-run them every
+              render.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`function App() {
+  const result = heavyCalculation();
+
+  return <h1>{result}</h1>;
+}`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Solution: useMemo for calculations
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 max-sm:text-xs break-words whitespace-pre-wrap">
+                {`const result = useMemo(() => {
+  return heavyCalculation();
+}, []);`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Summary
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  title: "React Re-renders",
+                  desc: "React re-renders components when state or props change.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "React.memo",
+                  desc: "Prevents unnecessary child re-renders.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "useMemo",
+                  desc: "Prevents recalculating heavy values every render.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Optimization Goal",
+                  desc: "Render only what is necessary.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* lesson 17 */}
+          <div
+            id="project-structure"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 17
+            </span>
+
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
+              Project Structure
+            </h2>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Project structure in React means how you organize your files and
+              folders. A good structure makes your app easier to maintain,
+              scale, and debug.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Why Structure Matters?
+            </p>
+
+            <div className="flex flex-col gap-3 mb-8">
+              {[
+                "Makes your code easier to read",
+                "Helps when project grows bigger",
+                "Improves team collaboration",
+                "Avoids messy codebase",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className="text-slate-300 text-sm">{item}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Basic React Structure
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`src/
+  components/
+    Button.jsx
+    Navbar.jsx
+
+  pages/
+    Home.jsx
+    About.jsx
+
+  hooks/
+    useCounter.js
+
+  services/
+    api.js
+
+  assets/
+    images/
+    styles/
+
+  App.jsx
+  main.jsx`}
+              </pre>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Explanation of Folders
+            </p>
+
+            <div className="flex flex-col gap-3 mb-8">
+              {[
+                {
+                  title: "components",
+                  desc: "Reusable UI components like buttons, navbar, cards.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "pages",
+                  desc: "Full pages like Home, About, Contact.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "hooks",
+                  desc: "Custom React hooks like useCounter, useFetch.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "services",
+                  desc: "API calls and backend logic.",
+                  color: "text-purple-400",
+                },
+                {
+                  title: "assets",
+                  desc: "Images, styles and static files.",
+                  color: "text-pink-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Simple Real Example
+            </p>
+
+            <p className="text-sm text-slate-400 leading-relaxed mb-4">
+              Instead of putting everything inside App.jsx, you split it into
+              small files.
+            </p>
+
+            <div
+              className="bg-[#0f1117] border border-white/10 rounded-lg p-4 font-mono text-sm mb-8 overflow-x-auto"
+              dir="ltr"
+            >
+              <pre className="text-slate-300 whitespace-pre-wrap">
+                {`// App.jsx
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Home />
+    </>
+  );
+}`}
+              </pre>
+            </div>
+
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-200 leading-relaxed mb-8">
+              💡 The goal is not to write less code, but to organize it better.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Best Practice
+            </p>
+
+            <div className="flex flex-col gap-3 mb-8">
+              {[
+                "Keep components small and reusable",
+                "Separate pages from components",
+                "Put API logic inside services",
+                "Use custom hooks for logic",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className="text-slate-300 text-sm">{item}</p>
+                </div>
+              ))}
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+              Summary
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  title: "Organized Code",
+                  desc: "Good structure keeps your project clean and scalable.",
+                  color: "text-cyan-400",
+                },
+                {
+                  title: "Separation of Concerns",
+                  desc: "Each folder has a specific responsibility.",
+                  color: "text-blue-400",
+                },
+                {
+                  title: "Reusable Components",
+                  desc: "Build once, use everywhere.",
+                  color: "text-green-400",
+                },
+                {
+                  title: "Easy Maintenance",
+                  desc: "Easier to update and debug your app.",
+                  color: "text-purple-400",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#0f1117] border border-white/7 rounded-xl p-4"
+                >
+                  <p className={`font-medium text-sm mb-1 ${item.color}`}>
+                    {item.title}
+                  </p>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
