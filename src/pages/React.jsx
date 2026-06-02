@@ -65,6 +65,8 @@ function React() {
 
         <link rel="canonical" href="https://learnwebdev.me/react" />
       </Helmet>
+    
+      <h1 className="sr-only">Learn React — تعلم React </h1>
 
       <div className="bg-[#0f1117] min-h-screen text-white flex">
         {/* Mobile Sidebar Button */}
@@ -115,7 +117,7 @@ function React() {
             sm:relative sm:sticky sm:top-0 sm:translate-x-0
           `}
         >
-          <h1 className="text-cyan-400 text-xl font-semibold">React Track</h1>
+          <h2 className="text-cyan-400 text-xl font-semibold">React Track</h2>
 
           <div className="flex flex-col gap-2">
             {[
@@ -165,9 +167,9 @@ function React() {
               Lesson 1
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Introduction To React
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               React is a JavaScript library used to build modern, fast and
@@ -346,7 +348,7 @@ function App() {
               Lesson 2
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">JSX</h1>
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">JSX</h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               JSX stands for JavaScript XML. It allows us to write HTML-like
@@ -584,9 +586,9 @@ function App() {
               Lesson 3
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Components
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Components are the building blocks of React applications. Every
@@ -827,9 +829,9 @@ function App() {
               Lesson 4
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Props
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Props (Properties) allow components to receive data from their
@@ -1115,9 +1117,9 @@ function App() {
               Lesson 5
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               useState Hook
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               useState is a React Hook that allows components to store and
@@ -1390,9 +1392,9 @@ setUser({
               Lesson 6
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Handling Events
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Events in React are used to handle user interactions like clicks,
@@ -1617,9 +1619,9 @@ setUser({
               Lesson 7
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Conditional Rendering
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Conditional rendering means showing different UI based on
@@ -1827,9 +1829,9 @@ function App() {
               Lesson 8
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Lists & Keys
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Lists in React are used to render multiple elements dynamically.
@@ -2039,9 +2041,9 @@ function App() {
               Lesson 9
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               useEffect Hook
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               useEffect is a React Hook used to handle side effects like
@@ -2255,9 +2257,9 @@ function App() {
               Lesson 10
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Forms in React
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Forms in React are used to collect user input like text, emails,
@@ -2482,9 +2484,9 @@ function App() {
               Lesson 11
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Lifting State Up
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Lifting state up means moving state to the closest common parent
@@ -2664,9 +2666,9 @@ function ChildB() {
               Lesson 12
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Context API
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Context API allows you to share data between components without
@@ -2816,9 +2818,9 @@ function Child() {
               Lesson 13
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               React Router
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               React Router is used to create multi-page navigation in React
@@ -3033,9 +3035,9 @@ function User() {
               Lesson 14
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Fetching Data in React
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Fetching data means getting information from an API (server) and

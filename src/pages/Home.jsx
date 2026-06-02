@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
-
 export default function Home() {
   const seoData = {
-  title:
-    "تعلم تطوير الويب | Learn Web Development",
+    title: "تعلم تطوير الويب | Learn Web Development",
 
-  desc:
-    "تعلم HTML و CSS و JavaScript و React من الصفر مع دروس وأمثلة عملية. Learn Web Development from scratch with beginner-friendly tutorials, coding examples, and modern web development concepts.",
-};
+    desc: "تعلم HTML و CSS و JavaScript و React من الصفر مع دروس وأمثلة عملية. Learn Web Development from scratch with beginner-friendly tutorials, coding examples, and modern web development concepts.",
+  };
 
   return (
     <>
@@ -38,7 +35,7 @@ export default function Home() {
 
         <link rel="canonical" href="https://learnwebdev.me/" />
       </Helmet>
-      
+
       <div className="bg-[#0f1117] min-h-screen text-slate-200 font-sans">
         {/* Hero */}
         <div className="text-center px-8 pt-16 pb-12">
@@ -49,6 +46,9 @@ export default function Home() {
             تعلم تطوير الويب
             <br />
             <span className="text-indigo-500">من الصفر للاحتراف</span>
+            <span className="block text-sm font-normal text-slate-500 mt-2 tracking-wide">
+              Learn Web Development from Zero to Pro
+            </span>
           </h1>
           <p className="text-slate-500 text-base max-w-lg mx-auto mb-8 leading-relaxed">
             دروس عملية بالعربي في HTML و CSS و JavaScript و React وأكتر — مجاناً

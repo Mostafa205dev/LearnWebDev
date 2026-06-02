@@ -68,6 +68,8 @@ function Css() {
         <link rel="canonical" href="https://learnwebdev.me/css" />
       </Helmet>
 
+      <h1 className="sr-only">Learn CSS — تعلم CSS </h1>
+
       <div className="bg-[#0f1117] min-h-screen text-white flex">
         {/* mobile nav */}
         <button
@@ -107,7 +109,7 @@ function Css() {
           sm:relative sm:sticky sm:top-0 sm:translate-x-0
         `}
         >
-          <h1 className="text-blue-400 text-xl">CSS Track</h1>
+          <h2 className="text-blue-400 text-xl">CSS Track</h2>
 
           <div className="flex flex-col gap-2">
             {lessons.map((lesson) => (
@@ -138,9 +140,9 @@ function Css() {
               Lesson 1
             </span>
 
-            <h1 className="text-2xl font-semibold mt-3 mb-3">
+            <h2 className="text-2xl font-semibold mt-3 mb-3">
               Introduction to CSS
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               CSS (Cascading Style Sheets) is used to style HTML elements. It

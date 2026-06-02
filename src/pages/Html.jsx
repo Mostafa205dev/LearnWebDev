@@ -61,6 +61,8 @@ function Html() {
         <link rel="canonical" href="https://learnwebdev.me/html" />
       </Helmet>
 
+      <h1 className="sr-only">Learn HTML — تعلم HTML</h1>
+      
       <div className="bg-[#0f1117] min-h-screen text-white flex">
         {/* button sidebar for phone */}
         <button
@@ -101,7 +103,7 @@ function Html() {
           sm:relative sm:sticky sm:top-0 sm:translate-x-0
         `}
         >
-          <h1 className="text-orange-400 text-xl">Html Track</h1>
+          <h2 className="text-orange-400 text-xl">Html Track</h2>
           <div className="flex flex-col gap-2">
             {[
               { id: "intro", label: "Introduction To Html" },
@@ -145,9 +147,9 @@ function Html() {
               Lesson 1
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Introduction To HTML
-            </h1>
+            </h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               HTML is the structure and content language of every website —
               before learning CSS or JavaScript, you need to understand HTML
@@ -332,9 +334,9 @@ function Html() {
               Lesson 2
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Page Structure
-            </h1>
+            </h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Every HTML page follows a specific structure — understanding it is
               key to writing correct HTML.
@@ -488,9 +490,9 @@ function Html() {
               Lesson 3
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Headings And Texts
-            </h1>
+            </h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               HTML gives you 6 heading levels and several text tags — each one
               carries a different meaning for the browser and the user.
@@ -669,9 +671,9 @@ function Html() {
               Lesson 4
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Links And Images
-            </h1>
+            </h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Links connect pages together and images make websites visually
               rich — these are two of the most used HTML elements.
@@ -860,9 +862,9 @@ function Html() {
               Lesson 5
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Lists
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Lists help organize content clearly — HTML provides ordered,
@@ -1091,9 +1093,9 @@ function Html() {
               Lesson 6
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Tables
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               HTML tables are used to display data in rows and columns — perfect
@@ -1313,9 +1315,9 @@ function Html() {
               Lesson 7
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Forms
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Forms allow users to send data to websites — like login pages,
@@ -1554,9 +1556,9 @@ function Html() {
               Lesson 8
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Semantic Elements
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Semantic HTML elements describe the meaning of content — making
@@ -1768,9 +1770,9 @@ function Html() {
               Lesson 9
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               HTML Attributes
-            </h1>
+            </h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Attributes add extra information to HTML elements — they control
               behavior, appearance, and accessibility without changing the tag
@@ -2137,9 +2139,9 @@ function Html() {
               Lesson 10
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Media Elements
-            </h1>
+            </h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               HTML lets you embed videos, audio, and external pages directly
               into your website — no plugins needed.
@@ -2346,9 +2348,9 @@ function Html() {
               Lesson 11
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Meta Tags &amp; SEO
-            </h1>
+            </h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Meta tags live inside the{" "}
               <code className="text-orange-300">&lt;head&gt;</code> and give
@@ -2604,9 +2606,9 @@ function Html() {
               Lesson 12
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               HTML Entities
-            </h1>
+            </h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Some characters have special meaning in HTML — entities let you
               display them as plain text without confusing the browser.
@@ -2833,9 +2835,9 @@ function Html() {
               Lesson 13
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Block vs Inline Elements
-            </h1>
+            </h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Every HTML element is either block-level or inline — this controls
               how elements sit next to each other on the page, and it's the

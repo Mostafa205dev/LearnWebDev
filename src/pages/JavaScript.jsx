@@ -63,6 +63,9 @@ function JavaScriptPage() {
         <link rel="canonical" href="https://learnwebdev.me/javascript" />
       </Helmet>
 
+      <h1 className="sr-only">Learn JavaScript — تعلم JavaScript </h1>
+
+
       <div className="bg-[#0f1117] min-h-screen text-white flex">
         {/* sidebar button mobile */}
         <button
@@ -104,9 +107,9 @@ function JavaScriptPage() {
             sm:relative sm:sticky sm:top-0 sm:translate-x-0
           `}
         >
-          <h1 className="text-yellow-400 text-xl font-semibold">
+          <h2 className="text-yellow-400 text-xl font-semibold">
             JavaScript Track
-          </h1>
+          </h2>
 
           <div className="flex flex-col gap-2">
             {[
@@ -157,9 +160,9 @@ function JavaScriptPage() {
               Lesson 1
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Introduction To JavaScript
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               JavaScript adds logic and interactivity to websites. It allows you
@@ -322,9 +325,9 @@ function JavaScriptPage() {
               Lesson 2
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Variables
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Variables are used to store data in JavaScript. You can save text,
@@ -526,9 +529,9 @@ function JavaScriptPage() {
               Lesson 3
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Data Types
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Data types define what kind of value a variable stores. JavaScript
@@ -764,9 +767,9 @@ Function`}
               Lesson 4
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Operators
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Operators are symbols used to perform operations on values and
@@ -1030,9 +1033,9 @@ Function`}
               Lesson 5
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Conditions
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Conditions allow your program to make decisions. You can run
@@ -1270,9 +1273,9 @@ console.log("Not allowed");
               Lesson 6
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Loops
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Loops are used to repeat a block of code multiple times. They help
@@ -1480,9 +1483,9 @@ for (let user of users) {
               Lesson 7
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Functions
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Functions are reusable blocks of code. You write them once and
@@ -1670,9 +1673,9 @@ console.log(greetUser("Ali"));`,
               Lesson 8
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Arrays
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Arrays are used to store multiple values in a single variable. You
@@ -1872,9 +1875,9 @@ for (const user of users) {
               Lesson 9
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Objects
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Objects are used to store structured data using key-value pairs.
@@ -2054,9 +2057,9 @@ user.age = 23;`,
               Lesson 10
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               DOM Manipulation
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               DOM Manipulation means using JavaScript to change HTML elements,
@@ -2213,9 +2216,9 @@ btn.addEventListener("click", () => {
               Lesson 11
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Events
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Events in JavaScript let you react to user actions like clicks,
@@ -2408,9 +2411,9 @@ input.addEventListener("input", (e) => {
               Lesson 12
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               setTimeout & setInterval
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               JavaScript timers let you run code after a delay or repeatedly at
@@ -2550,9 +2553,9 @@ setTimeout(() => {
               Lesson 13
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Modern ES6+
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               ES6 (ECMAScript 2015) introduced modern JavaScript features that
@@ -2720,9 +2723,9 @@ const result = [...a, ...b];`,
               Lesson 14
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Fetch API
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               The Fetch API allows you to make HTTP requests to servers and
@@ -2885,9 +2888,9 @@ const result = [...a, ...b];`,
               Lesson 15
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Async / Await
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Async/Await is a modern way to handle asynchronous code in
@@ -3057,9 +3060,9 @@ getData();`}</pre>
               Lesson 16
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Local Storage
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Local Storage allows you to save data in the browser that persists
@@ -3230,9 +3233,9 @@ if (theme) {
               Lesson 17
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               JavaScript Modules
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               JavaScript Modules allow you to split your code into multiple
@@ -3421,9 +3424,9 @@ utils.add(1,2);`,
               Lesson 18
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               OOP In JavaScript
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Object-Oriented Programming (OOP) is a programming paradigm that
@@ -3674,9 +3677,9 @@ car.showModel();`}
               Lesson 19
             </span>
 
-            <h1 className="text-2xl font-semibold text-slate-100 mb-2">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">
               Error Handling In JavaScript
-            </h1>
+            </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Errors are common in programming. JavaScript provides tools to
