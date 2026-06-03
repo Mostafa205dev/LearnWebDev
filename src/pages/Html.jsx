@@ -62,6 +62,7 @@ function Html() {
 
       <h1 className="sr-only">Learn HTML — تعلم HTML</h1>
 
+      {/* body */}
       <div className="bg-[#0f1117] min-h-screen text-white flex">
         {/* button sidebar for phone */}
         <button

@@ -3,11 +3,11 @@ import Html from "./pages/Html.jsx";
 import Css from "./pages/CSS.jsx";
 import JavaScript from "./pages/JavaScript.jsx";
 import React from "./pages/React.jsx";
+import TailWind from "./pages/Tailwind.jsx";
 import Header from "./components/Header.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Privacy from "./pages/Privacy.jsx";
-import ComingSoonPage from "./pages/ComingSoon.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/css" element={<Css />} />
         <Route path="/javascript" element={<JavaScript />} />
         <Route path="/react" element={<React />} />
-        <Route path="/tailwind" element={<ComingSoonPage />} />
+        <Route path="/tailwind" element={<TailWind />} />
       </Routes>
       {/* </main> */}
     </BrowserRouter>
