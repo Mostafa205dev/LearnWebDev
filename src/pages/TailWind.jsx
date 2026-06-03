@@ -1665,7 +1665,6 @@ function TailWind() {
             </p>
 
             <div className="border border-white/10 p-6 rounded bg-[#0f1117] mb-2">
-
               <p className="text-slate-400">
                 Scroll page → this element stays fixed on screen
               </p>
@@ -1706,6 +1705,324 @@ function TailWind() {
             <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-300">
               💡 Positioning controls where elements appear: inside layout, on
               screen, or fixed to viewport.
+            </div>
+          </div>
+
+          {/* lesson 13 */}
+          <div
+            id="zindex-overflow"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 13
+            </span>
+
+            <h2 className="text-2xl font-semibold text-slate-100 mb-6">
+              Z-Index & Overflow (Live + Code Explanation)
+            </h2>
+
+            {/* Z INDEX */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              z-index
+            </p>
+
+            <div className="relative h-32 border border-white/10 rounded bg-[#0f1117] mb-2">
+              <div className="absolute left-4 top-4 bg-cyan-500 p-4 rounded">
+                z-0
+              </div>
+
+              <div className="absolute left-12 top-8 bg-pink-500 p-4 rounded z-10">
+                z-10
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-400 mb-3">
+              className="z-10" → places the element above elements with lower
+              z-index
+            </p>
+
+            <p className="text-xs text-slate-500 mb-6">
+              z-index controls which element appears on top when elements
+              overlap.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            {/* COMMON Z INDEX VALUES */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              Common z-index values
+            </p>
+
+            <div className="bg-[#0f1117] border border-white/10 rounded-lg p-4 mb-6">
+              <p className="text-sm text-slate-300">z-0</p>
+              <p className="text-sm text-slate-300">z-10</p>
+              <p className="text-sm text-slate-300">z-20</p>
+              <p className="text-sm text-slate-300">z-30</p>
+              <p className="text-sm text-slate-300">z-40</p>
+              <p className="text-sm text-slate-300">z-50</p>
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            {/* OVERFLOW HIDDEN */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              overflow-hidden
+            </p>
+
+            <div className="w-48 h-24 overflow-hidden border border-white/10 rounded bg-[#0f1117] mb-2">
+              <div className="w-80 bg-cyan-500 p-2 text-black">
+                This content is larger than the container width
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-400 mb-3">
+              className="overflow-hidden" → hides content outside the container
+            </p>
+
+            <p className="text-xs text-slate-500 mb-6">
+              Any content exceeding the container boundaries becomes invisible.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            {/* OVERFLOW AUTO */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              overflow-auto
+            </p>
+
+            <div className="w-48 h-24 overflow-auto border border-white/10 rounded bg-[#0f1117] mb-2">
+              <div className="w-80 h-40 bg-green-500 p-2 text-black">
+                Scrollbars appear only when needed.
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-400 mb-3">
+              className="overflow-auto" → automatically adds scrollbars when
+              content overflows
+            </p>
+
+            <p className="text-xs text-slate-500 mb-6">
+              Useful for cards, tables, code blocks, and containers with dynamic
+              content.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            {/* OVERFLOW SCROLL */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              overflow-scroll
+            </p>
+
+            <div className="w-48 h-24 overflow-scroll border border-white/10 rounded bg-[#0f1117] mb-2">
+              <div className="w-80 h-40 bg-indigo-500 p-2">
+                Scrollbars are always visible.
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-400 mb-3">
+              className="overflow-scroll" → always shows scrollbars
+            </p>
+
+            <p className="text-xs text-slate-500 mb-6">
+              Even if content fits, the scrollbar remains visible.
+            </p>
+
+            {/* TIP */}
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-300">
+              💡 Use z-index when elements overlap. Use overflow utilities to
+              control what happens when content exceeds container boundaries.
+            </div>
+          </div>
+
+          {/* lesson 14 */}
+          <div
+            id="responsive-design"
+            className="bg-[#161b27] p-10 border border-white/10 rounded-xl w-full max-w-3xl max-sm:px-5"
+          >
+            <span className="inline-block bg-cyan-500/10 text-cyan-400 text-xs px-4 py-1 rounded-full mb-4">
+              Lesson 14
+            </span>
+
+            <h2 className="text-2xl font-semibold text-slate-100 mb-6">
+              Responsive Design (Live + Code Explanation)
+            </h2>
+
+            <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              Responsive Design allows your website to adapt to different screen
+              sizes. Tailwind uses breakpoint prefixes such as sm, md, lg, xl
+              and 2xl.
+            </p>
+
+            {/* BREAKPOINTS */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              Tailwind Breakpoints
+            </p>
+
+            <div className="bg-[#0f1117] border border-white/10 rounded-lg p-4 mb-8">
+              <div className="space-y-2 text-sm">
+                <p>
+                  <span className="text-cyan-400">sm:</span> 640px and above
+                  <span className="text-slate-500 ml-2">
+                    | max-sm: below 640px
+                  </span>
+                </p>
+
+                <p>
+                  <span className="text-cyan-400">md:</span> 768px and above
+                  <span className="text-slate-500 ml-2">
+                    | max-md: below 768px
+                  </span>
+                </p>
+
+                <p>
+                  <span className="text-cyan-400">lg:</span> 1024px and above
+                  <span className="text-slate-500 ml-2">
+                    | max-lg: below 1024px
+                  </span>
+                </p>
+
+                <p>
+                  <span className="text-cyan-400">xl:</span> 1280px and above
+                  <span className="text-slate-500 ml-2">
+                    | max-xl: below 1280px
+                  </span>
+                </p>
+
+                <p>
+                  <span className="text-cyan-400">2xl:</span> 1536px and above
+                  <span className="text-slate-500 ml-2">
+                    | max-2xl: below 1536px
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-300 mb-8">
+              💡 sm:, md:, lg: target screens larger than the breakpoint.
+              <p></p> max-sm:, max-md:, max-lg:  target screens smaller than the
+              breakpoint.
+            </div>
+
+            <hr className="border-white/10 mb-8" />
+
+            {/* RESPONSIVE TEXT */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              Responsive Text Size
+            </p>
+
+            <div className="bg-[#0f1117] border border-white/10 rounded-lg p-5 mb-2">
+              <h3 className="text-lg md:text-2xl lg:text-4xl font-bold">
+                Resize Your Browser
+              </h3>
+            </div>
+
+            <p className="text-xs text-slate-400 mb-3">
+              className="text-lg md:text-2xl lg:text-4xl"
+            </p>
+
+            <p className="text-xs text-slate-500 mb-6">
+              Text becomes larger on medium and large screens.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            {/* RESPONSIVE WIDTH */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              Responsive Width
+            </p>
+
+            <div className="bg-[#0f1117] border border-white/10 rounded-lg p-5 mb-2">
+              <div className="w-full md:w-1/2 lg:w-1/3 bg-cyan-500 text-black p-3 rounded">
+                Responsive Width
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-400 mb-3">
+              className="w-full md:w-1/2 lg:w-1/3"
+            </p>
+
+            <p className="text-xs text-slate-500 mb-6">
+              Full width on mobile, half width on tablets, one-third width on
+              desktops.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            {/* RESPONSIVE GRID */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              Responsive Grid
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-2">
+              <div className="bg-indigo-500 p-4 rounded text-center">1</div>
+              <div className="bg-indigo-500 p-4 rounded text-center">2</div>
+              <div className="bg-indigo-500 p-4 rounded text-center">3</div>
+            </div>
+
+            <p className="text-xs text-slate-400 mb-3">
+              className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            </p>
+
+            <p className="text-xs text-slate-500 mb-6">
+              1 column on mobile, 2 on tablets, 3 on desktop screens.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            {/* SHOW & HIDE */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              Show & Hide Elements
+            </p>
+
+            <div className="bg-[#0f1117] border border-white/10 rounded-lg p-5 mb-2">
+              <div className="block md:hidden bg-pink-500 p-3 rounded text-center">
+                Mobile Only
+              </div>
+
+              <div className="hidden md:block bg-green-500 p-3 rounded text-center mt-2">
+                Tablet & Desktop
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-400 mb-3">
+              className="block md:hidden"
+              <br />
+              className="hidden md:block"
+            </p>
+
+            <p className="text-xs text-slate-500 mb-6">
+              Display different content depending on screen size.
+            </p>
+
+            <hr className="border-white/10 mb-8" />
+
+            {/* RESPONSIVE FLEX */}
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">
+              Responsive Flex Direction
+            </p>
+
+            <div className="flex flex-col md:flex-row gap-3 mb-2">
+              <div className="bg-cyan-500 text-black p-4 rounded flex-1">
+                Item 1
+              </div>
+
+              <div className="bg-cyan-500 text-black p-4 rounded flex-1">
+                Item 2
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-400 mb-3">
+              className="flex flex-col md:flex-row"
+            </p>
+
+            <p className="text-xs text-slate-500 mb-6">
+              Vertical layout on mobile, horizontal layout on larger screens.
+            </p>
+
+            {/* TIP */}
+            <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-300">
+              💡 Mobile First means you write styles for mobile first, then add
+              breakpoint prefixes (sm, md, lg, xl) to enhance layouts on larger
+              screens.
             </div>
           </div>
         </div>

@@ -13,6 +13,8 @@ function Header() {
         return "Learn JavaScript";
       case "/react":
         return "Learn React";
+      case "/tailwind":
+        return "Learn TailWind";
       default:
         return "Start Learning";
     }
