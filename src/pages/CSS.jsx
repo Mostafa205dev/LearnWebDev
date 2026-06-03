@@ -74,18 +74,26 @@ function Css() {
       <div className="bg-[#0f1117] min-h-screen text-white flex">
         {/* mobile nav */}
         <button
-          className="fixed top-25 left-0 bg-blue-400 p-2 rounded-xl sm:hidden"
+          className="fixed top-24 left-0 bg-blue-400 text-black p-2 rounded-r-xl z-50 sm:hidden"
           onClick={() => setShowSidebar(!showSidebar)}
         >
           <div className="flex flex-col gap-1 w-6">
             <span
-              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${showSidebar ? "rotate-45 translate-y-1.5" : ""}`}
+              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${
+                showSidebar ? "rotate-45 translate-y-1.5" : ""
+              }`}
             ></span>
+
             <span
-              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${showSidebar ? "opacity-0" : ""}`}
+              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${
+                showSidebar ? "opacity-0" : ""
+              }`}
             ></span>
+
             <span
-              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${showSidebar ? "-rotate-45 -translate-y-1.5" : ""}`}
+              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${
+                showSidebar ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
             ></span>
           </div>
         </button>
