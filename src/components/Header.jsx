@@ -1,6 +1,22 @@
 import { Link } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 function Header() {
+  const location = useLocation();
+
+  const getButtonText = () => {
+    switch (location.pathname) {
+      case "/html":
+        return "Learn HTML";
+      case "/css":
+        return "Learn CSS";
+      case "/javascript":
+        return "Learn JavaScript";
+      case "/react":
+        return "Learn React";
+      default:
+        return "Start Learning";
+    }
+  };
   return (
     <div className="bg-[#0f1117] flex flex-wrap items-center justify-between px-8 py-4 border-b border-white/8">
       <div className="flex items-center justify-between w-full sm:w-auto">
@@ -11,7 +27,7 @@ function Header() {
           to="/html"
           className="text-sm bg-indigo-500 text-white rounded-lg px-4 py-2 hover:opacity-85 sm:hidden"
         >
-          ابدأ مجاناً
+          {getButtonText()}
         </Link>
       </div>
 
@@ -46,7 +62,7 @@ function Header() {
         to="/html"
         className="hidden sm:block text-sm bg-indigo-500 text-white rounded-lg px-4 py-2 hover:opacity-85"
       >
-        ابدأ مجاناً
+        {getButtonText()}
       </Link>
     </div>
   );

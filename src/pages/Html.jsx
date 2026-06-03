@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, ArrowRight, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Html() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -62,7 +63,7 @@ function Html() {
       </Helmet>
 
       <h1 className="sr-only">Learn HTML — تعلم HTML</h1>
-      
+
       <div className="bg-[#0f1117] min-h-screen text-white flex">
         {/* button sidebar for phone */}
         <button
@@ -133,6 +134,25 @@ function Html() {
                 • {lesson.label}
               </a>
             ))}
+          </div>
+          <div className="flex  gap-5">
+            <Link
+              to="/html"
+              aria-label="الدرس السابق"
+              className="flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 transition-colors"
+            >
+              <ArrowLeft size={16} />
+              <span>html</span>
+            </Link>
+
+            <Link
+              to="/css"
+              aria-label="الدرس التالي"
+              className="flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 transition-colors"
+            >
+              <span>css</span>
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
 

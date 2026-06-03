@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { ArrowUp } from "lucide-react";
-
+import { ArrowUp, ArrowRight, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 function React() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [activeLesson, setActiveLesson] = useState("intro");
@@ -152,6 +152,24 @@ function React() {
                 • {lesson.label}
               </a>
             ))}
+          </div>
+          <div className="flex  gap-5">
+            <Link
+              to="/javascript"
+              aria-label="الدرس السابق"
+              className="flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 transition-colors"
+            >
+              <ArrowLeft size={16} />
+              <span>javascript</span>
+            </Link>
+
+            <Link
+              aria-label="الدرس التالي"
+              className="flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 transition-colors"
+            >
+              <span>tailwind(soon)</span>
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
 
