@@ -3,7 +3,7 @@ import Html from "./pages/Html.jsx";
 import Css from "./pages/CSS.jsx";
 import JavaScript from "./pages/JavaScript.jsx";
 import React from "./pages/React.jsx";
-import TailWind from "./pages/Tailwind.jsx";
+import TailWind from "./pages/TailWind.jsx";
 import Header from "./components/Header.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
