@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { ArrowUp, ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import Top from "../components/Top";
+
 function React() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [activeLesson, setActiveLesson] = useState("intro");
@@ -26,12 +28,6 @@ function React() {
     return () => observer.disconnect();
   }, []);
 
-  function Top() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
 
   const seoData = {
     title: "Learn React | Learn Web Dev",
@@ -96,12 +92,7 @@ function React() {
         </button>
 
         {/* Scroll Top Button */}
-        <button
-          className="fixed bottom-5 right-5 bg-cyan-500 text-black p-2 rounded-xl z-50"
-          onClick={Top}
-        >
-          <ArrowUp size={20} color="white" />
-        </button>
+        <Top color="cyan" />
 
         {/* Sidebar */}
         <div
@@ -156,7 +147,6 @@ function React() {
           <div className="flex  gap-5">
             <Link
               to="/javascript"
-              aria-label="الدرس السابق"
               className="flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 transition-colors"
             >
               <ArrowLeft size={16} />
@@ -164,7 +154,6 @@ function React() {
             </Link>
 
             <Link
-              aria-label="الدرس التالي"
               className="flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 transition-colors"
             >
               <span>tailwind(soon)</span>

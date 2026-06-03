@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { ArrowUp, ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import Top from "../components/Top";
+
 
 function Html() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -26,10 +28,6 @@ function Html() {
 
     return () => observer.disconnect();
   }, []);
-
-  function Top() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
 
   const seoData = {
     title: "Learn HTML | Learn Web Dev",
@@ -67,37 +65,25 @@ function Html() {
       <div className="bg-[#0f1117] min-h-screen text-white flex">
         {/* button sidebar for phone */}
         <button
-          className="fixed top-24 left-0 bg-red-400 text-black p-2 rounded-r-xl z-50 sm:hidden"
+          className="fixed top-25 left-0 bg-red-400 p-2 rounded-xl sm:hidden"
           onClick={() => setShowSidebar(!showSidebar)}
         >
           <div className="flex flex-col gap-1 w-6">
             <span
-              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${
-                showSidebar ? "rotate-45 translate-y-1.5" : ""
-              }`}
+              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${showSidebar ? "rotate-45 translate-y-1.5" : ""}`}
             ></span>
-
             <span
-              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${
-                showSidebar ? "opacity-0" : ""
-              }`}
+              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${showSidebar ? "opacity-0" : ""}`}
             ></span>
-
             <span
-              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${
-                showSidebar ? "-rotate-45 -translate-y-1.5" : ""
-              }`}
+              className={`block h-0.5 w-full bg-white rounded transition-all duration-300 ${showSidebar ? "-rotate-45 -translate-y-1.5" : ""}`}
             ></span>
           </div>
         </button>
 
         {/* button to top*/}
-        <button
-          className="fixed bottom-5 right-5 bg-red-400 p-2 rounded-xl "
-          onClick={() => Top()}
-        >
-          <ArrowUp size={20} color="white" />
-        </button>
+        <Top color="orange" />
+
         {/* sidebar */}
         <div
           className={`

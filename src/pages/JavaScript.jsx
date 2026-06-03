@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { ArrowUp, ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import Top from "../components/Top";
+
 function JavaScriptPage() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [activeLesson, setActiveLesson] = useState("intro");
@@ -25,11 +27,7 @@ function JavaScriptPage() {
 
     return () => observer.disconnect();
   }, []);
-
-  function Top() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
+  
   const seoData = {
     title: "Learn JavaScript | Learn Web Dev",
     desc: "Learn JavaScript from scratch with variables, functions, arrays, DOM, events and modern ES6 concepts.",
@@ -86,12 +84,7 @@ function JavaScriptPage() {
         </button>
 
         {/* top button */}
-        <button
-          className="fixed bottom-5 right-5 bg-yellow-400 text-black p-2 rounded-xl z-50"
-          onClick={() => Top()}
-        >
-          <ArrowUp size={20} color="white" />
-        </button>
+        <Top color="yellow" />
 
         {/* sidebar */}
         <div

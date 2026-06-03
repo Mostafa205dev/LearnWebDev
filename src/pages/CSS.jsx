@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { ArrowUp, ArrowRight, ArrowLeft } from "lucide-react";
+import {ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import Top from "../components/Top";
 
 function Css() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -27,9 +28,6 @@ function Css() {
     return () => observer.disconnect();
   }, []);
 
-  function Top() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
 
   const seoData = {
     title: "Learn CSS | Learn Web Dev",
@@ -99,12 +97,7 @@ function Css() {
         </button>
 
         {/* top button */}
-        <button
-          className="fixed bottom-5 right-5 bg-blue-400 p-2 rounded-xl"
-          onClick={Top}
-        >
-          <ArrowUp size={20} color="white" />
-        </button>
+        <Top color="blue" />
 
         {/* sidebar */}
         <div
