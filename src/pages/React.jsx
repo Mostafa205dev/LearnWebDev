@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useRef } from "react";
 import { Helmet } from "react-helmet";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,6 +7,26 @@ import Top from "../components/Top";
 function React() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [activeLesson, setActiveLesson] = useState("intro");
+  const sidebarRef = useRef(null);
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (
+      showSidebar &&
+      sidebarRef.current &&
+      !sidebarRef.current.contains(event.target)
+    ) {
+      setShowSidebar(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, [showSidebar]);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -96,6 +116,7 @@ function React() {
 
         {/* Sidebar */}
         <div
+          ref={sidebarRef}
           className={`
             border-r border-white/10 p-7 w-[240px]
             flex flex-col gap-[30px]
@@ -154,9 +175,10 @@ function React() {
             </Link>
 
             <Link
+              to="/tailwind"
               className="flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 transition-colors"
             >
-              <span>tailwind(soon)</span>
+              <span>tailwind</span>
               <ArrowRight size={16} />
             </Link>
           </div>

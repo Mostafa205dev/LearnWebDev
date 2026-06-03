@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,6 +7,25 @@ import Top from "../components/Top";
 function TailWind() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [activeLesson, setActiveLesson] = useState("intro");
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        showSidebar &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target)
+      ) {
+        setShowSidebar(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSidebar]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -86,6 +105,7 @@ function TailWind() {
 
         {/* sidebar */}
         <div
+          ref={sidebarRef}
           className={`
             border-r border-white/10 p-7 w-[230px]
             flex flex-col gap-[30px]
@@ -140,21 +160,12 @@ function TailWind() {
           </div>
           <div className="flex gap-5">
             <Link
-              to="/css"
+              to="/react"
               aria-label="الدرس السابق"
               className="flex items-center gap-1 text-sm text-slate-500 hover:text-cyan-400 transition-colors"
             >
               <ArrowLeft size={16} />
-              <span>css</span>
-            </Link>
-            <span className="text-slate-700">|</span>
-            <Link
-              to="/react"
-              aria-label="الدرس التالي"
-              className="flex items-center gap-1 text-sm text-slate-500 hover:text-cyan-400 transition-colors"
-            >
               <span>react</span>
-              <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -1898,7 +1909,7 @@ function TailWind() {
             </div>
             <div className="border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-lg p-4 text-sm text-cyan-300 mb-8">
               💡 sm:, md:, lg: target screens larger than the breakpoint.
-              <p></p> max-sm:, max-md:, max-lg:  target screens smaller than the
+              <p></p> max-sm:, max-md:, max-lg: target screens smaller than the
               breakpoint.
             </div>
 

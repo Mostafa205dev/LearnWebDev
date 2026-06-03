@@ -1,13 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Top from "../components/Top";
 
-
 function Html() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [activeLesson, setActiveLesson] = useState("intro");
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        showSidebar &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target)
+      ) {
+        setShowSidebar(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSidebar]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -95,6 +113,7 @@ function Html() {
 
         {/* sidebar */}
         <div
+        ref={sidebarRef}
           className={`
           border-r border-white/10 p-7 w-[230px]
           flex flex-col gap-[30px]
