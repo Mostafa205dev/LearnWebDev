@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Top from "../components/Top";
 
@@ -1133,7 +1133,7 @@ function TailWind() {
             </span>
 
             <h2 className="text-2xl font-semibold text-slate-100 mb-6">
-              Borders & Outlines (Live Demo)
+              Borders & Outlines 
             </h2>
 
             {/* BORDER WIDTH LIVE */}
@@ -1343,7 +1343,7 @@ function TailWind() {
             </span>
 
             <h2 className="text-2xl font-semibold text-slate-100 mb-6">
-              Shadows & Opacity (Live Effects)
+              Shadows & Opacity 
             </h2>
 
             {/* SHADOWS */}
@@ -1432,7 +1432,7 @@ function TailWind() {
             </span>
 
             <h2 className="text-2xl font-semibold text-slate-100 mb-6">
-              Flexbox (Live + Code Explanation)
+              Flexbox 
             </h2>
 
             {/* FLEX ROW */}
@@ -1535,7 +1535,7 @@ function TailWind() {
             </span>
 
             <h2 className="text-2xl font-semibold text-slate-100 mb-6">
-              CSS Grid (Live + Code Explanation)
+              CSS Grid 
             </h2>
 
             {/* GRID 3 COLUMNS */}
@@ -1644,7 +1644,7 @@ function TailWind() {
             </span>
 
             <h2 className="text-2xl font-semibold text-slate-100 mb-6">
-              Positioning (Live + Code Explanation)
+              Positioning 
             </h2>
 
             {/* RELATIVE + ABSOLUTE */}
@@ -1729,7 +1729,7 @@ function TailWind() {
             </span>
 
             <h2 className="text-2xl font-semibold text-slate-100 mb-6">
-              Z-Index & Overflow (Live + Code Explanation)
+              Z-Index & Overflow 
             </h2>
 
             {/* Z INDEX */}
@@ -1855,7 +1855,7 @@ function TailWind() {
             </span>
 
             <h2 className="text-2xl font-semibold text-slate-100 mb-6">
-              Responsive Design (Live + Code Explanation)
+              Responsive Design 
             </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
