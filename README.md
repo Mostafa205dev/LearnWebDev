@@ -21,7 +21,7 @@ Whether you're starting with HTML and CSS or progressing toward modern JavaScrip
 
 ## 🌐 Live Demo
 
-🔗 [https://learnwebdev.example.com](https://learnwebdev.me/)
+🔗 [https://learnwebdev.me](https://learnwebdev.me/)
 
 Visit the live application to explore the platform.
 
