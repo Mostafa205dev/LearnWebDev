@@ -1,4 +1,4 @@
-# 🚀 LearnWebDev
+#  LearnWebDev
 
 A modern web development learning platform built with React.js, designed to help beginners learn web technologies through structured content, intuitive navigation, and a clean user experience.
 
