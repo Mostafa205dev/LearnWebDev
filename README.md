@@ -49,22 +49,7 @@ Whether you're starting with HTML and CSS or progressing toward modern JavaScrip
 
 ---
 
-## 📂 Project Structure
-
-```text
-src/
-├── components/
-├── pages/
-├── data/
-├── assets/
-├── hooks/
-├── layouts/
-└── App.jsx
-```
-
----
-
-## 🚀 Getting Started
+##  Getting Started
 
 ### Clone the Repository
 
