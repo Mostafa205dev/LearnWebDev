@@ -95,39 +95,6 @@ This project was built to:
 
 ---
 
-## 🔮 Future Improvements
-
-* User Authentication
-* Progress Tracking System
-* Interactive Coding Challenges
-* Quiz System
-* Course Bookmarking
-* Dark Mode
-* Backend Integration
-* Admin Dashboard
-* Course Search & Filtering
-* Learning Analytics
-
----
-
-## 🌐 Deployment
-
-The application is deployed using Vercel for fast and reliable hosting.
-
----
-
-## 🤝 Contributing
-
-Contributions, suggestions, and feedback are welcome.
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push the branch
-5. Open a Pull Request
-
----
-
 ## 👨‍💻 Author
 
 **Mostafa Tarek**
